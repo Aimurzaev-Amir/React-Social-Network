@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  margin: 0 auto;
+  max-width: 1180px;
+}
+.app-grid{
+  display: grid;
+  grid-template-areas: 
+  "h h"
+  "n c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  height: 100vh;
+  grid-gap: 10px;
+}
+
+.header{
+  grid-area: h;
+  background-color: green;
+}
+.header img{
+  width: 50px;
+}
+.nav {
+  padding-top: 20px;
+  grid-area: n;
+  background-color: burlywood;
+}
+.content {
+  grid-area: c;
+  background-color: cornflowerblue;
+}
+.content-banner img{
+  height: 200px;
+  width: 100%;
+}
+.about-user{
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+.user-photo{
+  margin: 0 30px 0 30px;
+}
+.user-photo img{
+  width: 130px;
+}
+.user-info li{
+  list-style: none;
+}
