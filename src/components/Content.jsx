@@ -5,6 +5,7 @@ import ContentViewProfile from "./ContentBar/Content/ContentViewProfile/ContentV
 import ContentSkills from "./ContentBar/Content/ContentSkills/ContentSkills";
 import ContentStrengths from "./ContentBar/Content/ContentStrengths/ContentStrengths";
 import ContentPortfolio from "./ContentBar/Content/ContentPortfolio/ContentPortfolio";
+import Publications from "./Publications";
 
 let Content = () => {
   return (
@@ -15,6 +16,7 @@ let Content = () => {
       <ContentSkills />
       <ContentStrengths />
       <ContentPortfolio />
+      <Publications />
     </div>
   );
 };
