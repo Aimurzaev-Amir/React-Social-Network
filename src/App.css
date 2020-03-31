@@ -84,7 +84,7 @@ header {
 .headerUser img:nth-child(2) {
   margin-right: 10px;
 }
-body {
+.bgColor {
   background-color: #e8eef2;
 }
 
@@ -480,7 +480,7 @@ body {
   margin: 0 auto;
 }
 .writePublicationInput {
-  margin: 0 30px 0 16px;
+  margin: 0 30px 0 20px;
 }
 .writePublicationInput input {
   width: 411px;
@@ -491,16 +491,165 @@ body {
 .writePublicationInput input::placeholder {
   font-weight: normal;
   font-size: 16px;
-  color: #91939F;
+  color: #91939f;
 }
-.writePublicationAdditionals{
+.writePublicationAdditionals {
   display: flex;
 }
-.writePublicationAdditionals img{
+.writePublicationAdditionals img {
   margin-right: 20px;
 }
-.writePublicationAdditionals :last-child{
+.writePublicationAdditionals :last-child {
   margin-right: 30px;
 }
+
+/* WritePublication END */
+
+/* PagePublications START */
+
+.publications {
+  margin-top: 20px;
+  padding: 30px 25px;
+  display: flex;
+  background-color: #fff;
+}
+.publicationsStatus {
+  position: relative;
+  margin-right: 20px;
+  padding-top: 5px;
+  border-left: 2px solid #27aae1;
+}
+.publicationInfo {
+  margin: -10px 0 0 7px;
+}
+.publicationInfo h4 {
+  font-weight: normal;
+  font-size: 16px;
+  color: #27aae1;
+}
+.publicationInfo p {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: normal;
+}
+.publicationStatusCircle {
+  position: absolute;
+  top: 0;
+  left: -6.5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  background-color: #27aae1;
+}
+.publicationPhoto {
+  margin-right: 20px;
+}
+.publicationDescription {
+  display: flex;
+}
+.descriptionInfo {
+  position: relative;
+  margin-left: 10px;
+}
+.descriptionIntro {
+  display: flex;
+  align-items: flex-start;
+}
+.usersNameComment {
+  margin-right: 15px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #27aae1;
+}
+.userFollowingStatus {
+  margin-right: 20px;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  color: #6ba71b;
+}
+.publicationAssessment {
+  position: absolute;
+  right: 0;
+  display: flex;
+  margin-top: -10px;
+  font-weight: normal;
+  font-size: 13px;
+}
+.publicationLike {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.publicationLike svg {
+  margin-right: 3px;
+}
+.publicationLike p {
+  color: #6ba71b;
+}
+.publicationDislike {
+  display: flex;
+  align-items: center;
+}
+.publicationDislike svg {
+  margin-right: 3px;
+}
+.publicationDislike p {
+  color: #d6100b;
+}
+.publishedText {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e8eef2;
+}
+.publishedTime {
+  padding: 6px 0 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e8eef2;
+}
+.publishedTime p {
+  font-weight: normal;
+  font-size: 13px;
+  color: #515365;
+}
+.publishedText {
+  font-weight: normal;
+  font-size: 13px;
+}
+.publicationAnswer {
+  display: flex;
+  font-size: 13px;
+  font-weight: normal;
+}
+.publicationAnswerPhoto {
+  margin-right: 10px;
+}
+.publicationAnswerComment span {
+  color: #27aae1;
+  margin-right: 10px;
+}
+.publicationAllAnswers p {
+  margin: 10px 0 10px 0;
+  color: rgba(81, 83, 101, 0.6);
+}
+.userAnswer{
+  display: flex;
+  align-items: center;
+}
+.userAnswer img{
+  margin-right: 10px;
+}
+.userAnswer input{
+  padding: 12px 10px 12px 25px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #F0F2F5;
+}
+.userAnswer input ::placeholder {
+  font-size: 13px;
+  font-weight: normal;
+  color: rgba(81, 83, 101, 0.6);
+}
+/* PagePublications END */
 
 /* ----- Publications END ------ */

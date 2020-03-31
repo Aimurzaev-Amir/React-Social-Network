@@ -5,7 +5,9 @@ import ContentViewProfile from "./ContentBar/Content/ContentViewProfile/ContentV
 import ContentSkills from "./ContentBar/Content/ContentSkills/ContentSkills";
 import ContentStrengths from "./ContentBar/Content/ContentStrengths/ContentStrengths";
 import ContentPortfolio from "./ContentBar/Content/ContentPortfolio/ContentPortfolio";
-import Publications from "./Publications";
+import WritePublication from "./PublicationsComponents/writePublication";
+import PagePublications from "./PublicationsComponents/PagePublications";
+
 
 let Content = () => {
   return (
@@ -16,7 +18,8 @@ let Content = () => {
       <ContentSkills />
       <ContentStrengths />
       <ContentPortfolio />
-      <Publications />
+      <WritePublication />
+      <PagePublications />
     </div>
   );
 };

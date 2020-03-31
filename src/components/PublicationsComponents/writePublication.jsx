@@ -1,8 +1,20 @@
 import React from "react";
-import UserPublicationIcon from "../../img/Publications/writePublication/user-photo.png";
+import WritePublicationPhoto from "./writePublicationPhoto";
+import WritePublicationInput from "./WritePublicationInput";
+import WritePublicationAdditionals from "./WritePublicationAdditionals";
+import Publicbtn from "./Publicbtn";
 
 let WritePublication = () => {
-  return <img src={UserPublicationIcon} alt="" />;
-};
+  return(
+    <div className="writePublicationBg">
+      <div className="writePublication">
+        <WritePublicationPhoto />
+        <WritePublicationInput />
+        <WritePublicationAdditionals />
+        <Publicbtn />
+      </div>
+    </div>
+  )
+}
 
 export default WritePublication;
