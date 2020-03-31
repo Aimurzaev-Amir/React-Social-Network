@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import ProfileInfo from "./components/ProfileInfo";
-import Content from "./components/Content";
+import SidebarContent from "./components/SidebarContent";
 
 
 let App = () => {
@@ -11,7 +11,12 @@ let App = () => {
       <Header />
       <body>
         <ProfileInfo />
-        <Content />
+        
+        <div className="cotent">
+          <SidebarContent />
+        </div>
+
+        
       </body>
     </div>
   );

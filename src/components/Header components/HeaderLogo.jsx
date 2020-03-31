@@ -4,7 +4,7 @@ import Logo from "../../img/logo.svg"
 let HeaderLogo = () => {
     return (
         <div>
-            <a href="#"><img src={Logo} alt="be able logo"/></a>
+            <a href="#s"><img src={Logo} alt="be able logo"/></a>
         </div>
     );
 }
