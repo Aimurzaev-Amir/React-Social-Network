@@ -142,7 +142,6 @@ body {
 }
 .profileButtons button {
   padding: 5px 10px 5px 10px;
-  border: 0;
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.45);
   color: #fff;
@@ -242,7 +241,7 @@ body {
   grid-template-columns: auto auto;
   grid-column-gap: 20px;
   grid-row-gap: 15px;
-  border-bottom: 1.5px solid #E8EEF2;
+  border-bottom: 1.5px solid #e8eef2;
 }
 .FriendsOnlineGrid p,
 .PopularGroupsGrid p {
@@ -258,6 +257,202 @@ body {
   color: #fff;
   border: 0;
   border-radius: 30px;
-  background-color: #27AAE1;
+  background-color: #27aae1;
 }
-/* Navbar block END */
+/* Sidebar block END */
+
+/* ---------- Content block START ------- */
+
+/* ContentBar START */
+.content {
+  display: flex;
+}
+.contentBar {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  height: 110px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.contentBarItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 105px;
+  padding: 25px 20px;
+  border-right: 2px solid #e9f1f7;
+}
+.contentBarItem p {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #515365;
+}
+.contentBar a {
+  text-decoration: none;
+}
+
+/* ContentBar END */
+
+/* ContentBanner START */
+
+.contentBanner {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.contentBanner img {
+  width: 100%;
+}
+.bannerPagination {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 15px 15px 15px;
+  grid-gap: 12px;
+  bottom: 12px;
+  left: 46%;
+}
+.bannerDot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.bannerDotNonActive {
+  opacity: 0.3;
+}
+
+/* ContentBanner END */
+
+/* ContentViewProfile START */
+
+.contentViewProfile {
+  margin-top: 20px;
+  padding: 15px 25px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #515365;
+  background-color: #fff;
+}
+
+.contentBlockTitle {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e8eef2;
+}
+.contentBlockTitle h4 {
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: 5px;
+}
+.viewProfileGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.viewProfileGrid p {
+  font-weight: normal;
+  font-size: 16px;
+  color: #515365;
+  margin-bottom: 15px;
+}
+
+/* ContentViewProfile END */
+
+/* ContentSkills START */
+
+.contentSkills {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 15px 25px;
+  background-color: #fff;
+}
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.skill {
+  position: relative;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 14px;
+  background-color: #e7e7e7;
+  border-radius: 3px;
+}
+.skillName {
+  padding-left: 10px;
+  color: #fff;
+}
+.skillProcent {
+  position: absolute;
+  right: 10px;
+}
+.skillMain {
+  height: 100%;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills1 {
+  width: 95%;
+  background-color: #2ab763;
+}
+.skills2 {
+  width: 90%;
+  background-color: #ffa23a;
+}
+.skills3 {
+  width: 60%;
+  background-color: #2a7da1;
+}
+.skills4 {
+  width: 20%;
+  background-color: #ff603a;
+}
+
+/* ContentSkills END */
+
+/* ContentStrengths START */
+
+.contentStrengths {
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 15px 25px;
+  background-color: #fff;
+}
+.contentSterngthsText p {
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #515365;
+}
+.contentSterngthsText :last-child{
+  margin-bottom: 0;
+}
+
+/* ContentStrengths END */
+
+.contentPortfolio{
+  margin-top: 20px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.contentPortfolioWorks{
+  display: flex;
+}
+/* ---------- Content block END --------- */

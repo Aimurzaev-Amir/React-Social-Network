@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import ProfileInfo from "./components/ProfileInfo";
 import SidebarContent from "./components/SidebarContent";
+import Content from "./components/Content";
 
 
 let App = () => {
@@ -12,8 +13,9 @@ let App = () => {
       <body>
         <ProfileInfo />
         
-        <div className="cotent">
+        <div className="content wrapper">
           <SidebarContent />
+          <Content />
         </div>
 
         
