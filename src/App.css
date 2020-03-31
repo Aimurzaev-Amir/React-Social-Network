@@ -1,54 +1,215 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Work Sans", sans-serif;
   box-sizing: border-box;
 }
-.wrapper{
+.wrapper {
   margin: 0 auto;
   max-width: 1180px;
 }
-.app-grid{
-  display: grid;
-  grid-template-areas: 
-  "h h"
-  "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  height: 100vh;
-  grid-gap: 10px;
+
+/* Header block START */
+
+header {
+  height: 70px;
+  background-color: #3f4257;
+}
+.header-flex-space {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-flex {
+  display: flex;
+  align-items: center;
+}
+.headerSearch {
+  position: relative;
+  height: 30px;
+  width: 270px;
+  margin: 0 40px 0 50px;
+  border-radius: 15px;
+}
+.headerSearch img {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.searchInput {
+  height: 30px;
+  width: 270px;
+  padding-left: 10px;
+  border-radius: 15px;
+  font-weight: normal;
+  font-size: 12px;
+}
+.headerNotifications {
+  margin-right: 40px;
+  cursor: pointer;
+}
+.headerNotifications img:hover {
+  opacity: 0.5;
+}
+.headerMusic {
+  display: flex;
+}
+.headerMusic img {
+  margin-right: 15px;
+  cursor: pointer;
+}
+.headerMusic img:hover {
+  opacity: 0.5;
+}
+.headerMusic:last-child {
+  margin-right: 0px;
+}
+.headerMusic h4 {
+  font-weight: normal;
+  font-size: 16px;
+  color: #fff;
+}
+.headerUser {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.headerUser h4 {
+  margin-right: 10px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #fff;
+}
+.headerUser img:nth-child(2) {
+  margin-right: 10px;
+}
+body {
+  background-color: #e8eef2;
 }
 
-.header{
-  grid-area: h;
-  background-color: green;
+/* Header block END */
+
+/* Profile block START */
+
+.profileBanner {
+  height: 375px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  background-image: url(./img/ProfileInfo/profile-banner.jpg);
 }
-.header img{
-  width: 50px;
+.profileIntro-bg {
+  position: relative;
+  background-color: #fff;
 }
-.nav {
-  padding-top: 20px;
-  grid-area: n;
-  background-color: burlywood;
-}
-.content {
-  grid-area: c;
-  background-color: cornflowerblue;
-}
-.content-banner img{
-  height: 200px;
-  width: 100%;
-}
-.about-user{
-  margin-top: 10px;
+.profileIntro {
+  position: relative;
+  height: 85px;
   display: flex;
-  align-items: flex-start;
 }
-.user-photo{
-  margin: 0 30px 0 30px;
+.profilePhoto {
+  width: 160px;
+  height: 160px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: #fff;
 }
-.user-photo img{
-  width: 130px;
+.profileUser {
+  position: absolute;
+  top: -85px;
+  display: flex;
 }
-.user-info li{
-  list-style: none;
+.banner-text {
+  color: #fff;
+  font-weight: normal;
+  font-size: 20px;
 }
+.userName {
+  margin-bottom: 20px;
+}
+.user-location {
+  display: flex;
+}
+.profileButtons {
+  position: absolute;
+  top: -45px;
+  right: 15px;
+  display: flex;
+}
+.profileButtons button {
+  padding: 5px 10px 5px 10px;
+  border: 0;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-weight: normal;
+  font-size: 16px;
+}
+.profileButtons :first-child {
+  margin-right: 10px;
+}
+.profileSocial {
+  margin-top: 46px;
+  display: flex;
+}
+.socialNetwork {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 2px;
+}
+.socialFacebook {
+  background-color: #2f5b9c;
+}
+.socialTwitter {
+  background-color: #37bff1;
+}
+.socialInstagram {
+  background-color: #f74881;
+}
+.socialVk {
+  background-color: #4a76a8;
+}
+.socialGooglePlus {
+  background-color: #dc5246;
+}
+
+/* Profile block END */
+
+/* Navbar block START */
+
+.content {
+  margin-top: 20px;
+}
+.navbar {
+  width: 200px;
+  margin-right: 20px;
+  padding: 20px 25px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.navbar .navbarItem:last-child{
+  margin-bottom: 0;
+}
+.navbarItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.navbarItem img{
+  margin-right: 10px;
+}
+.navbarItem p {
+  font-weight: normal;
+  font-size: 15px;
+  color: #515365;
+}
+
+/* Navbar block END */

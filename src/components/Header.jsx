@@ -1,11 +1,28 @@
 import React from "react";
+import HeaderLogo from "./Header components/HeaderLogo";
+import HeaderSearch from "./Header components/HeaderSearch";
+import HeaderNotifications from "./Header components/HeaderNotifications";
+import HeaderMusic from "./Header components/HeaderMusic";
+import HeaderUser from "./Header components/HeaderUser";
+
 
 let Header = () => {
-    return (
-        <header className="header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-      </header>
-    );
-}
+  return (
+    <header>
+      <div className="wrapper header-flex-space">
+        <div className="header-flex">
+          <HeaderLogo />
+        <HeaderSearch />
+        <HeaderNotifications />
+        <HeaderMusic />
+        </div>
+        <div>
+          <HeaderUser />
+      </div>
+      </div>
+        
+    </header>
+  );
+};
 
 export default Header;

@@ -1,15 +1,18 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Profile from "./components/Profile";
+import ProfileInfo from "./components/ProfileInfo";
+import Content from "./components/Content";
+
 
 let App = () => {
   return (
-    <div className="app-grid wrapper">
+    <div>
       <Header />
-      <Navbar />
-      <Profile />
+      <body>
+        <ProfileInfo />
+        <Content />
+      </body>
     </div>
   );
 };
