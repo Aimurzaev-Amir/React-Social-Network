@@ -6,21 +6,23 @@ import Group from "./NavbarGroups";
 import Photo from "./NavbarPhotos";
 import Songs from "./NavbarMusic";
 import Videos from "./NavbarVideos";
-import Eventss from "./NavbarEvents";
+import Events from "./NavbarEvents";
 import Blog from "./NavbarBlog";
 import stl from "../Sidebar.module.css";
+import NavbarMessages from "./NavbarMessages";
 
 let Navbar = () => {
-  return (
+  return ( 
     <div className={stl.navbar}>
       <MyPage />
       <Newsfeeds />
+      <NavbarMessages />
       <Friend />
       <Group />
       <Photo />
       <Songs />
       <Videos />
-      <Eventss />
+      <Events />
       <Blog />
     </div>
   );

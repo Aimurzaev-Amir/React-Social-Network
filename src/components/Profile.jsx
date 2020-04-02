@@ -9,9 +9,9 @@ import WritePublication from "./ProfilePageComponents/PublicationsComponents/Wri
 import PagePublication from "./ProfilePageComponents/PublicationsComponents/PagePublication";
 
 
-let Content = () => {
+let Profile = () => {
   return (
-    <div>
+    <div className="pageContentstl">
       <ContentBar />
       <ContentBanner />
       <ContentViewProfile />
@@ -24,4 +24,4 @@ let Content = () => {
   );
 };
 
-export default Content;
+export default Profile;

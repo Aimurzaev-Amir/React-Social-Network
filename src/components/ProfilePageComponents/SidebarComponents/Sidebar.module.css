@@ -20,6 +20,15 @@
 .navbarItem img {
   margin-right: 10px;
 }
+.navbarItem a {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 15px;
+  color: #515365;
+}
+.navbarItem a.active{
+  color: red;
+}
 .navbarItem p {
   font-weight: normal;
   font-size: 15px;

@@ -9,7 +9,7 @@ let PagePublication = () => {
     <div className={stl.publications}>
       <PagePublicationStatus />
       <PagePublicationPhoto />
-      <PagePublicationDescription />
+      <PagePublicationDescription username="Sarah Cruiz"/>
     </div>
   );
 };

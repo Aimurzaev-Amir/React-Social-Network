@@ -1,22 +1,29 @@
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import ProfileInfo from "./components/ProfileInfo";
 import SidebarContent from "./components/SidebarContent";
-import Content from "./components/Content";
+import Profile from "./components/Profile";
+import Messages from "./components/Messages";
+
 
 let App = () => {
   return (
-    <div>
-      <Header />
-      <div className="bgColor">
-        <ProfileInfo />
-        <div className="content wrapper">
-          <SidebarContent />
-          <Content />
+    <BrowserRouter>
+      <div>
+        <Header />
+        <div className="bgColor">
+          <ProfileInfo />
+          <div className="content wrapper">
+            <SidebarContent />
+            {/* <Profile /> */}
+            <Route path="/src/components/Profile.jsx" component={Profile} />
+            <Route path="/src/components/Messages.jsx" component={Messages} />
+          </div>
         </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 };
 
