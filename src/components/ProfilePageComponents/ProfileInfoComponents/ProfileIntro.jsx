@@ -1,11 +1,12 @@
 import React from "react";
 import ProfileIntroButtons from "./ProfileIntroButtons";
 import ProfileUser from "./ProfileUser";
+import stl from "./ProfileInfo.module.css";
 
 let ProfileIntro = () => {
   return (
-    <div className="profileIntro-bg">
-      <div className="profileIntro wrapper">
+    <div className={stl.profileIntroBg}>
+      <div className={`${stl.profileIntro} ${stl.wrapper}`}>
         <ProfileUser />
         <ProfileIntroButtons />
       </div>

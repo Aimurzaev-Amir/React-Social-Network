@@ -5,10 +5,11 @@ import About from "./ContentBarItem3";
 import Friends from "./ContentBarItem4";
 import Groups from "./ContentBarItem5";
 import More from "./ContentBarItem6";
+import stl from "../Content.module.css";
 
 let ContentBar = () => {
   return (
-    <div className="contentBar">
+    <div className={stl.contentBar}>
       <Overview />
       <Activity />
       <About />

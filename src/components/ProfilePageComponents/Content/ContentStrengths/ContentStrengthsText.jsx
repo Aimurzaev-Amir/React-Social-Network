@@ -1,8 +1,9 @@
 import React from "react";
+import stl from "../Content.module.css";
 
 let ContentStrengthsText = () => {
   return (
-    <div className="contentSterngthsText">
+    <div className={stl.contentSterngthsText}>
       <p>
         Great ideas - Without good ideas, any project is doomed to perish, but
         this is not about me.{" "}

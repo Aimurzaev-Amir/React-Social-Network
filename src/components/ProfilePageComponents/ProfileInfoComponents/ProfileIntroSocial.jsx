@@ -4,10 +4,11 @@ import SocialTwitter from "./SocialNetworks/Twitter";
 import SocialVk from "./SocialNetworks/VK";
 import SocialGooglePlus from "./SocialNetworks/GooglePlus";
 import SocialInstagram from "./SocialNetworks/Instagram";
+import stl from "./ProfileInfo.module.css";
 
 let ProfileIntroSocial = () => {
     return (
-        <div className="profileSocial">
+        <div className={stl.profileSocial}>
             <SocialFacebook />
             <SocialTwitter />
             <SocialInstagram />

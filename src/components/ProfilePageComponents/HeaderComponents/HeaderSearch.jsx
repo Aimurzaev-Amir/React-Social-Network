@@ -1,10 +1,11 @@
 import React from "react";
 import Search from "./HeaderImg/search1(black).svg";
+import stl from "./Header.module.css";
 
 let HeaderSearch = () => {
     return (
-        <div className="headerSearch">
-            <input className="searchInput" type="text" placeholder="Search here people or tags"/>
+        <div className={stl.headerSearch}>
+            <input className={stl.searchInput} type="text" placeholder="Search here people or tags"/>
             <img src={Search} alt=""/>
         </div>
             

@@ -1,12 +1,13 @@
 import React from "react";
+import stl from "../Content.module.css";
 
 let Skill3 = () => {
   return (
-    <div className="skill">
-      <div className="skillMain skills3">
-        <p className="skillName">JavaScript</p>
+    <div className={stl.skill}>
+      <div className={`${stl.skillMain} ${stl.skills3}`}>
+        <p className={stl.skillName}>JavaScript</p>
       </div>
-      <p className="skillProcent">60%</p>
+      <p className={stl.skillProcent}>60%</p>
     </div>
   );
 };

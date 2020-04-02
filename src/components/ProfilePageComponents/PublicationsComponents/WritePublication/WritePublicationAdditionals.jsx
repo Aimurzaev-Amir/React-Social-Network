@@ -3,10 +3,11 @@ import Compose from "../PublicationsImg/writePublication/compose1.svg";
 import AddPhoto from "../PublicationsImg/writePublication/gallery2.svg";
 import AddVideo from "../PublicationsImg/writePublication/video-camera3.svg";
 import AddMapPoint from "../PublicationsImg/writePublication/map4.svg";
+import stl from "../Publications.module.css"
 
 let WritePublicationAdditionals = () => {
     return(
-        <div className="writePublicationAdditionals">
+        <div className={stl.writePublicationAdditionals}>
             <img src={Compose} alt="be able compose publication"/>
             <img src={AddPhoto} alt="be able add images to publication"/>
             <img src={AddVideo} alt="be able add video to publication"/>

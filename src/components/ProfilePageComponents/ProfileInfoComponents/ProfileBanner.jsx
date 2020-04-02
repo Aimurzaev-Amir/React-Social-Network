@@ -1,9 +1,9 @@
 import React from "react";
-import "../../../App.css";
+import stl from "./ProfileInfo.module.css";
 
 let ProfileBanner = () => {
   return (
-    <div className="profileBanner">
+    <div className={stl.profileBanner}>
     </div>
   );
 };

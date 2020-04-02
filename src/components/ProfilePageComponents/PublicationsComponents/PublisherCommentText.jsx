@@ -1,8 +1,9 @@
 import React from "react";
+import stl from "./Publications.module.css"
 
 let PublisherCommentText = () => {
     return(
-        <div className="publishedText">
+        <div className={stl.publishedText}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

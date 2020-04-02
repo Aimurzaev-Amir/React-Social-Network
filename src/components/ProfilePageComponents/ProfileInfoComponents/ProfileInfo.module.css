@@ -1,0 +1,94 @@
+/* Profile block START */
+.wrapper {
+    margin: 0 auto;
+    max-width: 1180px;
+  }
+.profileBanner {
+    height: 375px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-image: url(./ProfileInfoImg/profile-banner.jpg);
+  }
+  .profileIntroBg {
+    position: relative;
+    background-color: #fff;
+  }
+  .profileIntro {
+    position: relative;
+    height: 85px;
+    display: flex;
+  }
+  .profilePhoto {
+    width: 160px;
+    height: 160px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: #fff;
+  }
+  .profileUser {
+    position: absolute;
+    top: -85px;
+    display: flex;
+  }
+  .bannerText {
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+  }
+  .userName {
+    margin-bottom: 20px;
+  }
+  .userLocation {
+    display: flex;
+  }
+  .profileButtons {
+    position: absolute;
+    top: -45px;
+    right: 15px;
+    display: flex;
+  }
+  .profileButtons button {
+    padding: 5px 10px 5px 10px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .profileButtons :first-child {
+    margin-right: 10px;
+  }
+  .profileSocial {
+    margin-top: 46px;
+    display: flex;
+  }
+  .socialNetwork {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    border-radius: 2px;
+  }
+  .socialFacebook {
+    background-color: #2f5b9c;
+  }
+  .socialTwitter {
+    background-color: #37bff1;
+  }
+  .socialInstagram {
+    background-color: #f74881;
+  }
+  .socialVk {
+    background-color: #4a76a8;
+  }
+  .socialGooglePlus {
+    background-color: #dc5246;
+  }
+  
+  /* Profile block END */

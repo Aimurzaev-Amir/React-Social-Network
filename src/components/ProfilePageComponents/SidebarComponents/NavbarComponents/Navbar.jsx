@@ -8,10 +8,11 @@ import Songs from "./NavbarMusic";
 import Videos from "./NavbarVideos";
 import Eventss from "./NavbarEvents";
 import Blog from "./NavbarBlog";
+import stl from "../Sidebar.module.css";
 
 let Navbar = () => {
   return (
-    <div className="navbar">
+    <div className={stl.navbar}>
       <MyPage />
       <Newsfeeds />
       <Friend />

@@ -1,9 +1,10 @@
 import React from "react";
 import FriendsIcon from "../SidebarImg/Friends.svg";
+import stl from "../Sidebar.module.css";
 
 let Friend = () => {
   return (
-    <div className="navbarItem friends">
+    <div className={`${stl.navbarItem} ${stl.friends}`}>
       <img src={FriendsIcon} alt="" />
       <p>Friends</p>
     </div>

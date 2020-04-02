@@ -1,0 +1,77 @@
+/* Header block START */
+
+header {
+    height: 70px;
+    background-color: #3f4257;
+  }
+  .header-flex-space {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-flex {
+    display: flex;
+    align-items: center;
+  }
+  .headerSearch {
+    position: relative;
+    height: 30px;
+    width: 270px;
+    margin: 0 40px 0 50px;
+    border-radius: 15px;
+  }
+  .headerSearch img {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+  .searchInput {
+    height: 30px;
+    width: 270px;
+    padding-left: 10px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .headerNotifications {
+    margin-right: 40px;
+    cursor: pointer;
+  }
+  .headerNotifications img:hover {
+    opacity: 0.5;
+  }
+  .headerMusic {
+    display: flex;
+  }
+  .headerMusic img {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .headerMusic img:hover {
+    opacity: 0.5;
+  }
+  .headerMusic:last-child {
+    margin-right: 0px;
+  }
+  .headerMusic h4 {
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+  }
+  .headerUser {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .headerUser h4 {
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+  }
+  .headerUser img:nth-child(2) {
+    margin-right: 10px;
+  }
+  
+  /* Header block END */

@@ -3,11 +3,12 @@ import WritePublicationPhoto from "./writePublicationPhoto";
 import WritePublicationInput from "./WritePublicationInput";
 import WritePublicationAdditionals from "./WritePublicationAdditionals";
 import Publicbtn from "../Publicbtn";
+import stl from "../Publications.module.css"
 
 let WritePublication = () => {
   return(
-    <div className="writePublicationBg">
-      <div className="writePublication">
+    <div className={stl.writePublicationBg}>
+      <div className={stl.writePublication}>
         <WritePublicationPhoto />
         <WritePublicationInput />
         <WritePublicationAdditionals />

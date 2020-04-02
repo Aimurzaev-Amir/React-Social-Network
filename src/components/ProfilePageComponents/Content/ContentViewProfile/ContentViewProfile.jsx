@@ -1,10 +1,11 @@
 import React from "react";
 import ViewProfileGrid from "./ViewProfileGrid";
 import ContentBlockTitle from "./ContentBlockTitle";
+import stl from "../Content.module.css";
 
 let ContentViewProfile = () => {
   return (
-    <div className="contentViewProfile">
+    <div className={stl.contentViewProfile}>
       <ContentBlockTitle />
       <ViewProfileGrid />
       <p>

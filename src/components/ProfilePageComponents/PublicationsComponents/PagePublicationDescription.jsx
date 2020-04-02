@@ -5,15 +5,16 @@ import UserCommentAnswer from "./UserCommentAnswer";
 import PublisherCommentText from "./PublisherCommentText";
 import PublicationUserDescription from "./PublicationUserDescription";
 import PublishedTime from "./PublisherTime";
+import stl from "./Publications.module.css"
 
 let PagePublicationDescription = () => {
   return (
-    <div className="publicationDescription">
+    <div className={stl.publicationDescription}>
       <PublicationUserDescription />
-      <div className="descriptionInfo">
-        <div className="descriptionIntro">
-          <h4 className="usersNameComment">Sarah Cruiz</h4>
-          <p className="userFollowingStatus">following</p>
+      <div className={stl.descriptionInfo}>
+        <div className={stl.descriptionIntro}>
+          <h4 className={stl.usersNameComment}>Sarah Cruiz</h4>
+          <p className={stl.userFollowingStatus}>following</p>
           <PublicationAssessment />
         </div>
         <PublishedTime />

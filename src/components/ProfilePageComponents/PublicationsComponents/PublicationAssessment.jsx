@@ -1,9 +1,10 @@
 import React from "react";
+import stl from "./Publications.module.css"
 
 let PublicationAssessment = () => {
   return (
-    <div className="publicationAssessment">
-      <div className="publicationLike">
+    <div className={stl.publicationAssessment}>
+      <div className={stl.publicationLike}>
         <svg
           width="24"
           height="33"
@@ -47,7 +48,7 @@ let PublicationAssessment = () => {
         <p>24</p>
       </div>
 
-      <div className="publicationDislike">
+      <div className={stl.publicationDislike}>
         <svg
           width="24"
           height="33"
