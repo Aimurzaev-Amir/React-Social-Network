@@ -99,7 +99,7 @@ header {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center 40%;
-  background-image: url(./img/ProfileInfo/profile-banner.jpg);
+  background-image: url(./components/ProfilePageComponents/ProfileInfoComponents/ProfileInfoImg/profile-banner.jpg);
 }
 .profileIntro-bg {
   position: relative;
@@ -511,7 +511,9 @@ header {
 
 .publications {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 30px 25px;
+  border-radius: 10px;
   display: flex;
   background-color: #fff;
 }

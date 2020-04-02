@@ -1,12 +1,12 @@
 import React from "react";
-import ContentBar from "./ContentBar/ContentBar";
-import ContentBanner from "./ContentBar/Content/ContentBanner/ContentBanner";
-import ContentViewProfile from "./ContentBar/Content/ContentViewProfile/ContentViewProfile";
-import ContentSkills from "./ContentBar/Content/ContentSkills/ContentSkills";
-import ContentStrengths from "./ContentBar/Content/ContentStrengths/ContentStrengths";
-import ContentPortfolio from "./ContentBar/Content/ContentPortfolio/ContentPortfolio";
-import WritePublication from "./PublicationsComponents/writePublication";
-import PagePublications from "./PublicationsComponents/PagePublications";
+import ContentBar from "./ProfilePageComponents/Content/ContentBar/ContentBar";
+import ContentBanner from "./ProfilePageComponents/Content/ContentBanner/ContentBanner";
+import ContentViewProfile from "./ProfilePageComponents/Content/ContentViewProfile/ContentViewProfile";
+import ContentSkills from "./ProfilePageComponents/Content/ContentSkills/ContentSkills";
+import ContentStrengths from "./ProfilePageComponents/Content/ContentStrengths/ContentStrengths";
+import ContentPortfolio from "./ProfilePageComponents/Content/ContentPortfolio/ContentPortfolio";
+import WritePublication from "./ProfilePageComponents/PublicationsComponents/WritePublication/writePublication";
+import PagePublication from "./ProfilePageComponents/PublicationsComponents/PagePublication";
 
 
 let Content = () => {
@@ -19,7 +19,7 @@ let Content = () => {
       <ContentStrengths />
       <ContentPortfolio />
       <WritePublication />
-      <PagePublications />
+      <PagePublication />
     </div>
   );
 };

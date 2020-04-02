@@ -1,7 +1,7 @@
 import React from "react";
-import FriendsOnlineGrid from "./FriendsSidebar.jsx/FriendsOnlineGrid";
-import Navbar from "./NavbarComponents/Navbar";
-import PopularGroupsGrid from "./GroupsSidebar.jsx/PopularGroupsGrid";
+import FriendsOnlineGrid from "./ProfilePageComponents/SidebarComponents/FriendsSidebar/FriendsOnlineGrid";
+import Navbar from "./ProfilePageComponents/SidebarComponents/NavbarComponents/Navbar";
+import PopularGroupsGrid from "./ProfilePageComponents/SidebarComponents/GroupsSidebar/PopularGroupsGrid";
 
 let SidebarContent = () => {
   return (

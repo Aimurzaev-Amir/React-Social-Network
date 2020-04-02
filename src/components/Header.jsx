@@ -1,9 +1,9 @@
 import React from "react";
-import HeaderLogo from "./Header components/HeaderLogo";
-import HeaderSearch from "./Header components/HeaderSearch";
-import HeaderNotifications from "./Header components/HeaderNotifications";
-import HeaderMusic from "./Header components/HeaderMusic";
-import HeaderUser from "./Header components/HeaderUser";
+import HeaderLogo from "./ProfilePageComponents/HeaderComponents/HeaderLogo";
+import HeaderSearch from "./ProfilePageComponents/HeaderComponents/HeaderSearch";
+import HeaderNotifications from "./ProfilePageComponents/HeaderComponents/HeaderNotifications";
+import HeaderMusic from "./ProfilePageComponents/HeaderComponents/HeaderMusic";
+import HeaderUser from "./ProfilePageComponents/HeaderComponents/HeaderUser";
 
 
 let Header = () => {
