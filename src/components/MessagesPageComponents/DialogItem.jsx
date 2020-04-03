@@ -1,0 +1,18 @@
+import React from "react";
+import stl from "./Messages.module.css";
+import {NavLink} from "react-router-dom";
+
+let DialogItem = props => {
+  return (
+    
+      <div className={stl.dialogsItem}>
+        <div className={stl.dialogsItemPhoto}>
+          <img src={props.userPhoto} alt="" />
+        </div>
+        <div className={stl.UserName}>{props.userName}</div>
+      </div>
+    
+  );
+};
+
+export default DialogItem;

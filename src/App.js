@@ -12,9 +12,10 @@ let App = () => {
   return (
     <BrowserRouter>
       <div>
-        <Header />
+        <Header /> 
         <div className="bgColor">
-          <ProfileInfo />
+        <Route path="/src/components/Profile.jsx" component={ProfileInfo} />
+          {/* <ProfileInfo /> */}
           <div className="content wrapper">
             <SidebarContent />
             {/* <Profile /> */}

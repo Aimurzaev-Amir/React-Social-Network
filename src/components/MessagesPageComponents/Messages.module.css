@@ -1,0 +1,62 @@
+.dialogsGrid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-column-gap: 15px;
+  margin-top: 20px;
+}
+.dialogsItem {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.dialogsItem.active {
+  background-color: #edeef0;
+}
+.dialogsItemPhoto {
+  border-radius: 100%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+}
+.dialogsItemPhoto img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.UserName {
+  margin-left: 10px;
+}
+.messages {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 25px;
+}
+.message {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #E8EEF2;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.answer {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(28, 183, 152, 0.2);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.userMessage {
+  margin-left: 10px;
+  width: 525px;
+}
+.userAnswer {
+  margin-right: 10px;
+  width: 525px;
+  text-align: right;
+}
