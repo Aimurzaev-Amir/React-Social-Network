@@ -4,6 +4,13 @@
   grid-column-gap: 15px;
   margin-top: 20px;
 }
+.dialogs a{
+  text-decoration: none;
+  color: #000;
+}
+.active {
+  background-color: red;
+}
 .dialogsItem {
   display: flex;
   align-items: center;
@@ -12,9 +19,7 @@
   border-radius: 10px;
   background-color: #fff;
 }
-.dialogsItem.active {
-  background-color: #edeef0;
-}
+
 .dialogsItemPhoto {
   border-radius: 100%;
   overflow: hidden;

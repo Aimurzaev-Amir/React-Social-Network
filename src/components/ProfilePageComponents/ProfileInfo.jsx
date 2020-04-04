@@ -1,6 +1,6 @@
 import React from "react";
-import ProfileBanner from "./ProfilePageComponents/ProfileInfoComponents/ProfileBanner";
-import ProfileIntro from "./ProfilePageComponents/ProfileInfoComponents/ProfileIntro";
+import ProfileBanner from "./ProfileInfoComponents/ProfileBanner";
+import ProfileIntro from "./ProfileInfoComponents/ProfileIntro";
 
 let ProfileInfo = () => {
     return (
