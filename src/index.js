@@ -11,6 +11,8 @@ ReactDOM.render(
     posts={state.profilePage.posts}
     Messages={state.messagesPage.Messages}
     Answers={state.messagesPage.Answers}
+    FriendsSideBar={state.sidebar.FriendsSideBar}
+    GroupsSidebar={state.sidebar.GroupsSidebar}
   />,
   document.getElementById("root")
 );
@@ -19,3 +21,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+ 

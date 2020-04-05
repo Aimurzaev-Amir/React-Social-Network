@@ -16,7 +16,7 @@ let Navbar = () => {
     <div className={stl.navbar}>
       <MyPage />
       <Newsfeeds />
-      <NavbarMessages />
+      <NavbarMessages /> 
       <Friend />
       <Group />
       <Photo />

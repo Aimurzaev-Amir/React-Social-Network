@@ -1,20 +1,20 @@
 import React from "react";
 import Group1 from "./Group1";
-import Group2 from "./Group2";
-import Group3 from "./Group3";
-import Group4 from "./Group4";
 import stl from "../Sidebar.module.css";
 
+let PopularGroupsGrid = (props) => {
 
-let PopularGroupsGrid = () => {
+  let GroupsElements = props.GroupsSidebar.map((group) => {
     return (
-        <div className={stl.PopularGroupsGrid}>
-          <Group1 />
-          <Group2 />
-          <Group3 />
-          <Group4 />
-        </div>
-    )
-}
+      <Group1
+        id={group.id}
+        Group1Img={group.Group1Img}
+        GroupName={group.GroupName}
+      />
+    );
+  });
+
+  return <div className={stl.PopularGroupsGrid}>{GroupsElements}</div>;
+};
 
 export default PopularGroupsGrid;

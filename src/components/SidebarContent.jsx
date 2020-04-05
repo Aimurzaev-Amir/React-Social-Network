@@ -2,21 +2,26 @@ import React from "react";
 import FriendsOnlineGrid from "./ProfilePageComponents/SidebarComponents/FriendsSidebar/FriendsOnlineGrid";
 import Navbar from "./ProfilePageComponents/SidebarComponents/NavbarComponents/Navbar";
 import PopularGroupsGrid from "./ProfilePageComponents/SidebarComponents/GroupsSidebar/PopularGroupsGrid";
+import ButtonSideBar from "./ProfilePageComponents/SidebarComponents/Buttonsidebar";
+import { NavLink } from "react-router-dom";
 
-let SidebarContent = () => {
+let SidebarContent = (props) => {
   return (
     <div className="sidebar-content wrapper">
       <Navbar />
       <div className="OnlineFriendsSidebar">
         <h4>Friends</h4>
-        <FriendsOnlineGrid />
-        <button className="PageButton">See all online friends</button>
+        <FriendsOnlineGrid FriendsSideBar={props.FriendsSideBar} />
+        <NavLink to="./FriendsPageComponents/Friends.jsx">
+          <ButtonSideBar buttonText="See all online friends" />
+        </NavLink>
       </div>
-
       <div className="GroupsSidebar">
         <h4>Groups</h4>
-        <PopularGroupsGrid />
-        <button className="PageButton">See all groups</button>
+        <PopularGroupsGrid GroupsSidebar={props.GroupsSidebar} />
+        <NavLink to="./FriendsPageComponents/Groups.jsx">
+          <ButtonSideBar buttonText="See all groups" />
+        </NavLink>
       </div>
     </div>
   );

@@ -1,19 +1,19 @@
 import React from "react";
 import Friend1 from "./Friend1";
-import Friend2 from "./Friend2";
-import Friend3 from "./Friend3";
-import Friend4 from "./Friend4";
 import stl from "../Sidebar.module.css";
 
-let FriendsOnlineGrid = () => {
+let FriendsOnlineGrid = (props) => {
+  let FriendsElements = props.FriendsSideBar.map((friend) => {
     return (
-        <div className={stl.FriendsOnlineGrid}>
-            <Friend1 />
-            <Friend2 />
-            <Friend3 />
-            <Friend4 />
-          </div>
+      <Friend1
+        id={friend.id}
+        FriendImg={friend.FriendImg}
+        FriendName={friend.FriendName}
+      />
     );
-}
+  });
+
+  return <div className={stl.FriendsOnlineGrid}>{FriendsElements}</div>;
+};
 
 export default FriendsOnlineGrid;

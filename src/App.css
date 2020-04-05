@@ -24,6 +24,7 @@
   border: 0;
   border-radius: 30px;
   background-color: #27aae1;
+  cursor: pointer;
 }
 .header-flex-space {
   padding-top: 10px;

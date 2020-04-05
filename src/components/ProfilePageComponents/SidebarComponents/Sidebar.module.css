@@ -26,10 +26,11 @@
   font-size: 15px;
   color: #515365;
 }
-.navbarItem a.active{
+.navbarItem a.active {
   color: red;
 }
 .navbarItem p {
+  text-decoration: none;
   font-weight: normal;
   font-size: 15px;
   color: #515365;
@@ -66,10 +67,12 @@
   grid-row-gap: 15px;
   border-bottom: 1.5px solid #e8eef2;
 }
-.FriendsOnlineGrid p,
-.PopularGroupsGrid p {
+.FriendsOnlineGrid a,
+.PopularGroupsGrid a {
+  text-decoration: none;
   text-align: center;
   font-weight: normal;
+  color: #515365;
   font-size: 12px;
 }
 .PageButton {

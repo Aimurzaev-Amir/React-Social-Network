@@ -1,13 +1,15 @@
 import React from "react";
-import Friend1Img from "../SidebarImg/Friends/Friend1.jpg";
 import stl from "../Sidebar.module.css";
+import { NavLink } from "react-router-dom";
 
-let Friend1 = () => {
+let Friend1 = (props) => {
   return (
-    <div className={stl.Friend1}>
-      <img src={Friend1Img} alt="Emma Taylor" />
-      <p>Emma Taylor</p>
-    </div>
+    <NavLink to={"./FriendsPageComponents/Friend" + props.id}>
+      <div className={stl.Friend1}>
+        <img src={props.FriendImg} alt="Emma Taylor" />
+        <p>{props.FriendName}</p>
+      </div>
+    </NavLink>
   );
 };
 export default Friend1;

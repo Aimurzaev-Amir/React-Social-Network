@@ -1,13 +1,15 @@
 import React from "react";
-import Group1Img from "../SidebarImg/Groups/Group1.jpg";
 import stl from "../Sidebar.module.css";
+import { NavLink } from "react-router-dom";
 
-let Group1 = () => {
+let Group1 = (props) => {
   return (
-    <div className={stl.Group1}>
-      <img src={Group1Img} alt="" />
-      <p>Emma Taylor</p>
-    </div>
+    <NavLink to={"./Group" + props.id}>
+      <div className={stl.Group1}>
+        <img src={props.Group1Img} alt="" />
+        <p>{props.GroupName}</p>
+      </div>
+    </NavLink>
   );
 };
 

@@ -4,10 +4,9 @@ import DialogItem from "./DialogItem";
 import MessagesUser1 from "./MessagesUser1";
 
 let Messages = (props) => {
-   
 
   let DialogsElements = props.Dialogs.map(dialog => {
-    return (
+    return ( 
       <DialogItem
         id={dialog.id}
         userName={dialog.userName}

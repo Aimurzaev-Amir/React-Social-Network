@@ -18,7 +18,7 @@ let App = (props) => {
             render={() => <ProfileInfo />}
           />
           <div className="content wrapper">
-            <SidebarContent />
+            <SidebarContent FriendsSideBar={props.FriendsSideBar} GroupsSidebar={props.GroupsSidebar} />
             <Route
               path="/src/components/ProfilePageComponents/"
               render={() => <Profile posts={props.posts} />}
