@@ -14,7 +14,7 @@ let Messages = (props) => {
         userPhoto={dialog.userPhoto}
       />
     );
-  });
+  }); 
 
   return (
     <div className="pageContentstl">

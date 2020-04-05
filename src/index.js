@@ -21,7 +21,8 @@ let posts = [
     answerUsersName: "Carina",
     usersAnswer:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-    UserAnswerIcon: require("./components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png")
+    commentNumbers: 10,
+      UserAnswerIcon: require("./components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png")
   },
   {
     id: 2,
@@ -38,7 +39,8 @@ let posts = [
     answerUsersName: "Melany",
     usersAnswer:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-    UserAnswerIcon: require("./components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png")
+    commentNumbers: 6,
+      UserAnswerIcon: require("./components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png")
   }
 ];
 

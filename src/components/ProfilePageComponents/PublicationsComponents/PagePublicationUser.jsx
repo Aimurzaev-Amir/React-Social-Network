@@ -3,7 +3,7 @@ import stl from "./Publications.module.css";
 
 let PagePublicationUser = (props) => {
   return (
-    <div>
+    <div className="publicationUserStatus">
       <h4 className={stl.usersNameComment}>{props.userName}</h4>
       <p className={stl.userFollowingStatus}>following</p>
     </div>
