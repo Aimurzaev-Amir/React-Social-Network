@@ -6,9 +6,9 @@ import ContentSkills from "./Content/ContentSkills/ContentSkills";
 import ContentStrengths from "./Content/ContentStrengths/ContentStrengths";
 import ContentPortfolio from "./Content/ContentPortfolio/ContentPortfolio";
 import WritePublication from "./PublicationsComponents/WritePublication/writePublication";
-import PagePublications from "./PublicationsComponents/PagePublications";
+import PagePublication from "./PublicationsComponents/PagePublication";
 
-let Profile = () => {
+let Profile = (props) => {
   return (
     <div className="pageContentstl">
       <ContentBar />
@@ -18,7 +18,7 @@ let Profile = () => {
       <ContentStrengths />
       <ContentPortfolio />
       <WritePublication />
-      <PagePublications />
+      <PagePublication posts={props.posts}/>
     </div>
   );
 };
