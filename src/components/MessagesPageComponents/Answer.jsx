@@ -1,7 +1,7 @@
 import React from "react";
 import stl from "./Messages.module.css";
 
-let Answer = props => {
+let Answer = (props) => {
   return (
     <div className={stl.answer}>
       <div className={stl.userAnswer}>

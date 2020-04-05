@@ -1,7 +1,7 @@
 import React from "react";
-import stl from "../Messages.module.css";
-import Message from "../Message";
-import Answer from "../Answer";
+import stl from "./Messages.module.css";
+import Message from "./Message";
+import Answer from "./Answer";
 
 let Messages1USer = (props) => {
 

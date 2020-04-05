@@ -1,7 +1,7 @@
 import React from "react";
 import stl from "./Messages.module.css";
 import DialogItem from "./DialogItem";
-import MessagesUser1 from "./UserMessages/MessagesUser1";
+import MessagesUser1 from "./MessagesUser1";
 
 let Messages = (props) => {
    
