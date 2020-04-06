@@ -4,6 +4,9 @@
   grid-column-gap: 15px;
   margin-top: 20px;
 }
+/* .dialogs{
+  overflow-y: scroll;
+} */
 .dialogs a{
   text-decoration: none;
   color: #000;
@@ -34,10 +37,40 @@
 .UserName {
   margin-left: 10px;
 }
-.messages {
-  background-color: #fff;
+.messagesWindow{
+  position: relative;
+  height: 85vh;
   border-radius: 10px;
   padding: 15px 25px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.messages {
+  position: relative;
+  height: 90%;
+  overflow-y: scroll;
+} 
+.messageTextArea{
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.messageTextArea textarea{
+  position: relative;
+  width: 100%;
+  max-width: 595px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  outline: none;
+}
+.submitMessageBtn{
+ position: absolute;
+ right: 60px;
+ width: 30px;
+ height: 30px;
+ cursor: pointer;
 }
 .message {
   padding: 5px;

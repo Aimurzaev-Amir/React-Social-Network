@@ -2,10 +2,10 @@ import React from "react";
 import stl from "./Messages.module.css";
 import Message from "./Message";
 import Answer from "./Answer";
+import MessageTextArea from "./MessageTextArea";
 
 let Messages1USer = (props) => {
-
-  let MessagesElements = props.Messages.map(message => {
+  let MessagesElements = props.Messages.map((message) => {
     return (
       <Message
         id={message.id}
@@ -15,7 +15,7 @@ let Messages1USer = (props) => {
     );
   });
 
-  let AnswersElements = props.Answers.map(answer => {
+  let AnswersElements = props.Answers.map((answer) => {
     return (
       <Answer
         id={answer.id}
@@ -26,9 +26,12 @@ let Messages1USer = (props) => {
   });
 
   return (
-    <div className={stl.messages}>
-      {MessagesElements}
-      {AnswersElements}
+    <div className={stl.messagesWindow}>
+      <div className={stl.messages}>
+        {MessagesElements}
+        {AnswersElements}
+      </div>
+      <MessageTextArea />
     </div>
   );
 };

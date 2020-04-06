@@ -15,22 +15,21 @@ let App = (props) => {
         <div className="bgColor">
           <Route
             path="/src/components/ProfilePageComponents/"
-            render={() => <ProfileInfo />}
-          />
+            render={() => <ProfileInfo />} />
           <div className="content wrapper">
-            <SidebarContent FriendsSideBar={props.FriendsSideBar} GroupsSidebar={props.GroupsSidebar} />
+            <SidebarContent 
+              FriendsSideBar={props.FriendsSideBar} 
+              GroupsSidebar={props.GroupsSidebar} />
             <Route
               path="/src/components/ProfilePageComponents/"
-              render={() => <Profile posts={props.posts} />}
-            />
+              render={() => <Profile posts={props.posts} />} />
             <Route
               path="/src/components/MessagesPageComponents/"
               render={() => (
                 <Messages
                   Dialogs={props.Dialogs}
                   Messages={props.Messages}
-                  Answers={props.Answers}
-                />
+                  Answers={props.Answers} />
               )}
             />
           </div>
