@@ -1,5 +1,4 @@
 import React from "react";
-import CommentAnswer from "./PublicationsImg/UserComment2.png";
 import stl from "./Publications.module.css";
 
 let PublicationAnswer = (props) => {

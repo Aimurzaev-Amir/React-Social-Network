@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../Render";
+
 let state = {
   profilePage: {
     posts: [
@@ -38,6 +40,7 @@ let state = {
         UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
       },
     ],
+    newPostText: ''
   },
 
   messagesPage: {
@@ -145,6 +148,7 @@ let state = {
           "It was great! You will not belive me, but there were Maroon 5!",
       },
     ],
+    newAnswerText: 'XYN',
   },
   sidebar: {
     FriendsSideBar: [
@@ -192,6 +196,51 @@ let state = {
       },
     ],
   },
+};
+
+export let addPost = () => {
+  let newPost = {
+    id: 3,
+    PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
+    UserComment1: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment1.png"),
+    userName: "Amir Aimurzayev",
+    publicationText:
+      state.profilePage.newPostText,
+    likes: 0,
+    dislikes: 0,
+    Time: "0 mins",
+    CommentAnswer: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment2.png"),
+    answerUsersName: "Adelya",
+    usersAnswer:
+      "Привет, это мой первый пост по кнопке, это ответ на коммент к посту.",
+    commentNumbers: 0,
+    UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
+  };
+  state.profilePage.posts.push(newPost);
+  rerenderEntireTree(state);
+  updateNewPostText('');
+
+};
+
+export let addAnswer = () => {
+  let newAnswer = {
+    id: 1,
+        userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend1.jpg"),
+        answerText: state.messagesPage.newAnswerText,
+  }
+  state.messagesPage.Answers.push(newAnswer);
+  rerenderEntireTree(state);
+  updateNewAnswerText('');
+}
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+};
+
+export let updateNewAnswerText = (newAnswer) => {
+  state.messagesPage.newAnswerText = newAnswer;
+  rerenderEntireTree(state);
 };
 
 export default state;

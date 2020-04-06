@@ -1,10 +1,15 @@
 import React from "react";
-import stl from "../Publications.module.css"
+import stl from "../Publications.module.css";
 
 let WritePublicationInput = (props) => {
   return (
     <div className={stl.writePublicationInput}>
-      <input ref={props.NewPostElement} type="text" placeholder="Write what you wish" />
+      <input
+        onChange={props.onPostChange}
+        ref={props.NewPostElement}
+        value={props.newPostText}
+        placeholder="Write what you wish"
+      />
     </div>
   );
 };

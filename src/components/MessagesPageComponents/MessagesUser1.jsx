@@ -25,13 +25,18 @@ let Messages1USer = (props) => {
     );
   });
 
+
   return (
     <div className={stl.messagesWindow}>
       <div className={stl.messages}>
         {MessagesElements}
         {AnswersElements}
       </div>
-      <MessageTextArea />
+      <MessageTextArea
+        updateNewAnswerText={props.updateNewAnswerText}
+        newAnswerText={props.newAnswerText}
+        addAnswer={props.addAnswer}
+      />
     </div>
   );
 };

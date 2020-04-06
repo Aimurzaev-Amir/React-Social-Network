@@ -11,6 +11,7 @@ import PublicationAnswer from "./PublicationAnswer";
 import UserCommentAnswer from "./UserCommentAnswer";
 
 let PagePublication = (props) => {
+  
   let PagePublicationsElements = props.posts.map((post) => {
     return (
       <div className={stl.publications}>

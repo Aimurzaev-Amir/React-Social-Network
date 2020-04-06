@@ -1,24 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import {rerenderEntireTree} from "./Render";
 import state from "./Redux/State";
 
-ReactDOM.render(
-  <App
-    Dialogs={state.messagesPage.Dialogs}
-    posts={state.profilePage.posts}
-    Messages={state.messagesPage.Messages}
-    Answers={state.messagesPage.Answers}
-    FriendsSideBar={state.sidebar.FriendsSideBar}
-    GroupsSidebar={state.sidebar.GroupsSidebar}
-  />,
-  document.getElementById("root")
-);
+rerenderEntireTree(state);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
- 

@@ -17,8 +17,12 @@ let Profile = (props) => {
       <ContentSkills />
       <ContentStrengths />
       <ContentPortfolio />
-      <WritePublication />
-      <PagePublication posts={props.posts}/>
+      <WritePublication
+        updateNewPostText={props.updateNewPostText}
+        newPostText={props.newPostText}
+        addPost={props.addPost}
+      />
+      <PagePublication posts={props.posts} />
     </div>
   );
 };
