@@ -3,10 +3,11 @@ import stl from "./Messages.module.css";
 import SubmitBtn from "./MessagesImg/send.svg";
 
 let MessageTextArea = (props) => {
+  
   let NewAnswerElement = React.createRef();
 
   let addAnswer = () => {
-    props.addAnswer();
+    props.addAnswer(); 
   };
 
   let OnMessageChange = () => {
@@ -15,14 +16,14 @@ let MessageTextArea = (props) => {
   };
 
   return (
-    <div className={stl.messageTextArea}>
-      <textarea
+    <div className={stl.messageInput}>
+      <input
         onChange={OnMessageChange}
         ref={NewAnswerElement}
         name="messageTextArea"
         placeholder="Write a message"
         value={props.newAnswerText}
-      ></textarea>
+      ></input>
       <div onClick={addAnswer} className={stl.submitMessageBtn}>
         <img src={SubmitBtn} alt="" />
       </div>

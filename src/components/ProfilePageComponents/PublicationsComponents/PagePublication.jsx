@@ -11,7 +11,6 @@ import PublicationAnswer from "./PublicationAnswer";
 import UserCommentAnswer from "./UserCommentAnswer";
 
 let PagePublication = (props) => {
-  
   let PagePublicationsElements = props.posts.map((post) => {
     return (
       <div className={stl.publications}>
@@ -22,12 +21,19 @@ let PagePublication = (props) => {
           <div className={stl.descriptionInfo}>
             <div className={stl.descriptionIntro}>
               <PagePublicationUser userName={post.userName} />
-              <PublicationAssessment likes={post.likes} dislikes={post.dislikes}
+              <PublicationAssessment
+                likes={post.likes}
+                dislikes={post.dislikes}
               />
             </div>
             <PublishedTime Time={post.Time} />
             <PublisherCommentText publicationText={post.publicationText} />
-            <PublicationAnswer CommentAnswer={post.CommentAnswer} answerUsersName={post.answerUsersName} usersAnswer={post.usersAnswer} commentNumbers={post.commentNumbers} />
+            <PublicationAnswer
+              CommentAnswer={post.CommentAnswer}
+              answerUsersName={post.answerUsersName}
+              usersAnswer={post.usersAnswer}
+              commentNumbers={post.commentNumbers}
+            />
             <UserCommentAnswer UserAnswerIcon={post.UserAnswerIcon} />
           </div>
         </div>

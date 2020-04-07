@@ -19,8 +19,7 @@ let App = (props) => {
         <div className="content wrapper">
           <SidebarContent
             FriendsSideBar={props.FriendsSideBar}
-            GroupsSidebar={props.GroupsSidebar}
-          />
+            GroupsSidebar={props.GroupsSidebar}/>
           <Route
             path="/src/components/ProfilePageComponents/"
             render={() => (
@@ -28,8 +27,7 @@ let App = (props) => {
                 posts={props.posts}
                 updateNewPostText={props.updateNewPostText}
                 newPostText={props.newPostText}
-                addPost={props.addPost}
-              />
+                addPost={props.addPost}/>
             )}
           />
           <Route
@@ -37,12 +35,11 @@ let App = (props) => {
             render={() => (
               <Messages
                 Dialogs={props.Dialogs}
-                Messages={props.Messages}
+                Messages={props.Messages} 
                 Answers={props.Answers}
                 addAnswer={props.addAnswer}
                 updateNewAnswerText={props.updateNewAnswerText}
-                newAnswerText={props.newAnswerText}
-              />
+                newAnswerText={props.newAnswerText}/>
             )}
           />
         </div>

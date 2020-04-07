@@ -189,6 +189,7 @@
   color: rgba(81, 83, 101, 0.6);
 }
 .userAnswer {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -203,11 +204,21 @@
   width: 100%;
   border-radius: 50px;
   background-color: #f0f2f5;
+  outline: none;
 }
 .userAnswer input ::placeholder {
   font-size: 13px;
   font-weight: normal;
   color: rgba(81, 83, 101, 0.6);
+}
+.submitMessageBtn{
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.submitMessageBtn img{
+  width: 25px;
+  height: 25px;
 }
 /* PagePublications END */
 

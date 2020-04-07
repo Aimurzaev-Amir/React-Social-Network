@@ -1,5 +1,9 @@
-import { rerenderEntireTree } from "../Render";
+let store = {
+  
+}
 
+let rerenderEntireTree = () => {
+}
 let state = {
   profilePage: {
     posts: [
@@ -40,9 +44,8 @@ let state = {
         UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
       },
     ],
-    newPostText: ''
+    newPostText: "",
   },
-
   messagesPage: {
     Dialogs: [
       {
@@ -148,7 +151,7 @@ let state = {
           "It was great! You will not belive me, but there were Maroon 5!",
       },
     ],
-    newAnswerText: 'XYN',
+    newAnswerText: "",
   },
   sidebar: {
     FriendsSideBar: [
@@ -204,8 +207,7 @@ export let addPost = () => {
     PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
     UserComment1: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment1.png"),
     userName: "Amir Aimurzayev",
-    publicationText:
-      state.profilePage.newPostText,
+    publicationText: state.profilePage.newPostText,
     likes: 0,
     dislikes: 0,
     Time: "0 mins",
@@ -218,20 +220,19 @@ export let addPost = () => {
   };
   state.profilePage.posts.push(newPost);
   rerenderEntireTree(state);
-  updateNewPostText('');
-
+  updateNewPostText("");
 };
 
 export let addAnswer = () => {
   let newAnswer = {
     id: 1,
-        userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend1.jpg"),
-        answerText: state.messagesPage.newAnswerText,
-  }
+    userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
+    answerText: state.messagesPage.newAnswerText,
+  };
   state.messagesPage.Answers.push(newAnswer);
   rerenderEntireTree(state);
-  updateNewAnswerText('');
-}
+  updateNewAnswerText("");
+};
 
 export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
@@ -243,4 +244,8 @@ export let updateNewAnswerText = (newAnswer) => {
   rerenderEntireTree(state);
 };
 
-export default state;
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer; //observer
+}
+
+export default state; 

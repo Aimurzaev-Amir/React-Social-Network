@@ -5,6 +5,7 @@ import Answer from "./Answer";
 import MessageTextArea from "./MessageTextArea";
 
 let Messages1USer = (props) => {
+  
   let MessagesElements = props.Messages.map((message) => {
     return (
       <Message
@@ -29,7 +30,7 @@ let Messages1USer = (props) => {
   return (
     <div className={stl.messagesWindow}>
       <div className={stl.messages}>
-        {MessagesElements}
+        {MessagesElements} 
         {AnswersElements}
       </div>
       <MessageTextArea

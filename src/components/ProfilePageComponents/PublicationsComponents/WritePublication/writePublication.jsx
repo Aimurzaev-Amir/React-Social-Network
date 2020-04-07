@@ -12,7 +12,7 @@ let WritePublication = (props) => {
   let addPost = () => {
     props.addPost();
   };
-
+ 
   let onPostChange = () => {
     let text = NewPostElement.current.value;
     props.updateNewPostText(text);
