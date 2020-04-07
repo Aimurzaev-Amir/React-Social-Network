@@ -11,7 +11,7 @@ import PagePublication from "./PublicationsComponents/PagePublication";
 let Profile = (props) => {
   return (
     <div className="pageContentstl">
-      <ContentBar />
+      <ContentBar /> 
       <ContentBanner />
       <ContentViewProfile />
       <ContentSkills />
@@ -19,10 +19,10 @@ let Profile = (props) => {
       <ContentPortfolio />
       <WritePublication
         updateNewPostText={props.updateNewPostText}
-        newPostText={props.newPostText}
+        newPostText={props.profilePage.newPostText}
         addPost={props.addPost}
       />
-      <PagePublication posts={props.posts} />
+      <PagePublication posts={props.profilePage.posts} />
     </div>
   );
 };

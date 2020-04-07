@@ -4,7 +4,7 @@ import DialogItem from "./DialogItem";
 import MessagesUser1 from "./MessagesUser1";
 
 let Messages = (props) => {
-  let DialogsElements = props.Dialogs.map((dialog) => {
+  let DialogsElements = props.messagesPage.Dialogs.map((dialog) => {
     return (
       <DialogItem
         id={dialog.id}
@@ -20,10 +20,10 @@ let Messages = (props) => {
         <div className={stl.dialogs}>{DialogsElements}</div>
         <MessagesUser1
           updateNewAnswerText={props.updateNewAnswerText}
-          newAnswerText={props.newAnswerText}
+          newAnswerText={props.messagesPage.newAnswerText}
           addAnswer={props.addAnswer}
-          Messages={props.Messages}
-          Answers={props.Answers}
+          Messages={props.messagesPage.Messages}
+          Answers={props.messagesPage.Answers}
         />
       </div>
     </div>

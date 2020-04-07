@@ -15,7 +15,7 @@ let WritePublication = (props) => {
  
   let onPostChange = () => {
     let text = NewPostElement.current.value;
-    props.updateNewPostText(text);
+    props.updateNewPostText(text); 
   };
 
   return (

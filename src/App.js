@@ -17,29 +17,25 @@ let App = (props) => {
           render={() => <ProfileInfo />}
         />
         <div className="content wrapper">
-          <SidebarContent
-            FriendsSideBar={props.FriendsSideBar}
-            GroupsSidebar={props.GroupsSidebar}/>
+          <SidebarContent sidebarPage={props.state.sidebar} />
           <Route
             path="/src/components/ProfilePageComponents/"
             render={() => (
               <Profile
-                posts={props.posts}
+                profilePage={props.state.profilePage}
                 updateNewPostText={props.updateNewPostText}
-                newPostText={props.newPostText}
-                addPost={props.addPost}/>
+                addPost={props.addPost}
+              />
             )}
           />
           <Route
             path="/src/components/MessagesPageComponents/"
             render={() => (
               <Messages
-                Dialogs={props.Dialogs}
-                Messages={props.Messages} 
-                Answers={props.Answers}
+                messagesPage={props.state.messagesPage}
                 addAnswer={props.addAnswer}
                 updateNewAnswerText={props.updateNewAnswerText}
-                newAnswerText={props.newAnswerText}/>
+              />
             )}
           />
         </div>
