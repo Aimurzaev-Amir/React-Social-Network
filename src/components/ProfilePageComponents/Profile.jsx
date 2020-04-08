@@ -18,9 +18,8 @@ let Profile = (props) => {
       <ContentStrengths />
       <ContentPortfolio />
       <WritePublication
-        updateNewPostText={props.updateNewPostText}
         newPostText={props.profilePage.newPostText}
-        addPost={props.addPost}
+        dispatch={props.dispatch}
       />
       <PagePublication posts={props.profilePage.posts} />
     </div>

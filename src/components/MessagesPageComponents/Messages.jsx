@@ -19,9 +19,8 @@ let Messages = (props) => {
       <div className={stl.dialogsGrid}>
         <div className={stl.dialogs}>{DialogsElements}</div>
         <MessagesUser1
-          updateNewAnswerText={props.updateNewAnswerText}
+          dispatch={props.dispatch}
           newAnswerText={props.messagesPage.newAnswerText}
-          addAnswer={props.addAnswer}
           Messages={props.messagesPage.Messages}
           Answers={props.messagesPage.Answers}
         />

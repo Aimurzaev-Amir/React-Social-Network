@@ -23,8 +23,7 @@ let App = (props) => {
             render={() => (
               <Profile
                 profilePage={props.state.profilePage}
-                updateNewPostText={props.updateNewPostText}
-                addPost={props.addPost}
+                dispatch={props.dispatch}
               />
             )}
           />
@@ -33,8 +32,7 @@ let App = (props) => {
             render={() => (
               <Messages
                 messagesPage={props.state.messagesPage}
-                addAnswer={props.addAnswer}
-                updateNewAnswerText={props.updateNewAnswerText}
+                dispatch={props.dispatch}
               />
             )}
           />

@@ -196,60 +196,55 @@ let store = {
     },
   },
 
+  _CallSubscriber() {
+    console.log("save changes");
+  },
+
   getState() {
     return this._state;
   },
 
-  _CallSubscriber() {
-    console.log("save changes")
-  },
-
-  addPost() {
-    debugger;
-    let newPost = {
-      id: 3,
-      PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
-      UserComment1: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment1.png"),
-      userName: "Amir Aimurzayev",
-      publicationText: this._state.profilePage.newPostText,
-      likes: 0,
-      dislikes: 0,
-      Time: "0 mins",
-      CommentAnswer: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment2.png"),
-      answerUsersName: "Adelya",
-      usersAnswer:
-        "Привет, это мой первый пост по кнопке, это ответ на коммент к посту.",
-      commentNumbers: 0,
-      UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._CallSubscriber(this._state);
-    this.updateNewPostText("");
-  },
-
-  addAnswer() {
-    let newAnswer = {
-      id: 1,
-      userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
-      answerText: this._state.messagesPage.newAnswerText,
-    };
-    this._state.messagesPage.Answers.push(newAnswer);
-    this._CallSubscriber(this._state);
-    this.updateNewAnswerText("");
-  },
-
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._CallSubscriber(this._state);
-  },
-
-  updateNewAnswerText(newAnswer) {
-    this._state.messagesPage.newAnswerText = newAnswer;
-    this._CallSubscriber(this._state);
-  },
-
   subscribe(observer) {
     this._CallSubscriber = observer; //observer
+  },
+
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 3,
+        PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
+        UserComment1: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment1.png"),
+        userName: "Amir Aimurzayev",
+        publicationText: this._state.profilePage.newPostText,
+        likes: 0,
+        dislikes: 0,
+        Time: "0 mins",
+        CommentAnswer: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment2.png"),
+        answerUsersName: "Adelya",
+        usersAnswer:
+          "Привет, это мой первый пост по кнопке, это ответ на коммент к посту.",
+        commentNumbers: 0,
+        UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._CallSubscriber(this._state);
+      // this.updateNewPostText("");
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.profilePage.newPostText = action.newText;
+      this._CallSubscriber(this._state);
+    } else if (action.type === "ADD-ANSWER") {
+      let newAnswer = {
+        id: 1,
+        userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
+        answerText: this._state.messagesPage.newAnswerText,
+      };
+      this._state.messagesPage.Answers.push(newAnswer);
+      this._CallSubscriber(this._state);
+      // this.updateNewAnswerText("");
+    } else if (action.type === "UPDATE-NEW-ANSWER-TEXT") {
+      this._state.messagesPage.newAnswerText = action.newAnswer;
+      this._CallSubscriber(this._state);
+    }
   },
 };
 

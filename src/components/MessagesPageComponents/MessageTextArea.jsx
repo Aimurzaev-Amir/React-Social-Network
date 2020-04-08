@@ -7,12 +7,12 @@ let MessageTextArea = (props) => {
   let NewAnswerElement = React.createRef();
 
   let addAnswer = () => {
-    props.addAnswer(); 
+    props.dispatch({type:"ADD-ANSWER"}); 
   };
 
   let OnMessageChange = () => {
     let text = NewAnswerElement.current.value;
-    props.updateNewAnswerText(text);
+    props.dispatch({type:"UPDATE-NEW-ANSWER-TEXT", newAnswer: text});
   };
 
   return (
