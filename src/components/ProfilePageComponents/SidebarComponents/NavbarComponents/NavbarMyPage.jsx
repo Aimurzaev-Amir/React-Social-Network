@@ -7,7 +7,7 @@ let MyPage = () => {
   return (
     <div className={`${stl.navbarItem} ${stl.myPage}`}>
       <img src={MyPageIcon} alt="" />
-      <NavLink to="/src/components/ProfilePageComponents/Profile.jsx" activeClassName={stl.active}>Aimurzayev Amir</NavLink>
+      <NavLink to="/profile" activeClassName={stl.active}>Aimurzayev Amir</NavLink>
     </div>
   ); 
 };

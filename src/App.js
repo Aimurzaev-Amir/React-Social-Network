@@ -13,13 +13,13 @@ let App = (props) => {
       <Header />
       <div className="bgColor">
         <Route
-          path="/src/components/ProfilePageComponents/"
+          path="/profile"
           render={() => <ProfileInfo />}
         />
         <div className="content wrapper">
           <SidebarContent sidebarPage={props.state.sidebar} />
           <Route
-            path="/src/components/ProfilePageComponents/"
+            path="/profile"
             render={() => (
               <Profile
                 profilePage={props.state.profilePage}
@@ -28,7 +28,7 @@ let App = (props) => {
             )}
           />
           <Route
-            path="/src/components/MessagesPageComponents/"
+            path="/messages"
             render={() => (
               <Messages
                 messagesPage={props.state.messagesPage}

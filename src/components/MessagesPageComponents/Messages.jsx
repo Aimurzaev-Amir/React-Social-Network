@@ -15,7 +15,7 @@ let Messages = (props) => {
   });
 
   return (
-    <div className="pageContentstl">
+    <div className="pageContentstl"> 
       <div className={stl.dialogsGrid}>
         <div className={stl.dialogs}>{DialogsElements}</div>
         <MessagesUser1

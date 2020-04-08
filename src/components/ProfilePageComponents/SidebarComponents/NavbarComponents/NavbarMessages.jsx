@@ -7,7 +7,7 @@ let NavbarMessages = () => {
   return (
     <div className={`${stl.navbarItem} ${stl.blog}`}>
       <img src={BlogIcon} alt="" />
-      <NavLink to="/src/components/MessagesPageComponents/Messages.jsx" activeClassName={stl.active}>Messages</NavLink>
+      <NavLink to="/messages" activeClassName={stl.active}>Messages</NavLink>
     </div>
   );
 };

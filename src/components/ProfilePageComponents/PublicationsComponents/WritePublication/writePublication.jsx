@@ -4,18 +4,17 @@ import WritePublicationInput from "./WritePublicationInput";
 import WritePublicationAdditionals from "./WritePublicationAdditionals";
 import Publicbtn from "./Publicbtn";
 import stl from "../Publications.module.css";
+import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../../Redux/profileReducer";
 
 let WritePublication = (props) => {
 
-  let NewPostElement = React.createRef();
-
   let addPost = () => {
-    props.dispatch({type: 'ADD-POST'});
+    props.dispatch(addPostActionCreator());
   };
  
-  let onPostChange = () => {
-    let text = NewPostElement.current.value;
-    props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
+  let onPostChange = (e) => {
+    let text = e.target.value;
+    props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   return (
@@ -23,10 +22,9 @@ let WritePublication = (props) => {
       <div className={stl.writePublication}>
         <WritePublicationPhoto />
         <WritePublicationInput
-        newPostText={props.newPostText}
+          newPostText={props.newPostText}
           onPostChange={onPostChange}
           updateNewPostText={props.updateNewPostText}
-          NewPostElement={NewPostElement}
         />
         <WritePublicationAdditionals />
         <Publicbtn addPost={addPost} />

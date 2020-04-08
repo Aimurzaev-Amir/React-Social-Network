@@ -1,3 +1,7 @@
+import profileReducer from "./profileReducer";
+import messagesReducer from "./messagesReducer";
+import sidebarReducer from "./sidebarReducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -209,42 +213,10 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let newPost = {
-        id: 3,
-        PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
-        UserComment1: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment1.png"),
-        userName: "Amir Aimurzayev",
-        publicationText: this._state.profilePage.newPostText,
-        likes: 0,
-        dislikes: 0,
-        Time: "0 mins",
-        CommentAnswer: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment2.png"),
-        answerUsersName: "Adelya",
-        usersAnswer:
-          "Привет, это мой первый пост по кнопке, это ответ на коммент к посту.",
-        commentNumbers: 0,
-        UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
-      };
-      this._state.profilePage.posts.push(newPost);
+      profileReducer(this._state.profilePage, action);
+      messagesReducer(this._state.messagesPage, action);
+      sidebarReducer(this._state.sidebar, action)
       this._CallSubscriber(this._state);
-      // this.updateNewPostText("");
-    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-      this._state.profilePage.newPostText = action.newText;
-      this._CallSubscriber(this._state);
-    } else if (action.type === "ADD-ANSWER") {
-      let newAnswer = {
-        id: 1,
-        userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
-        answerText: this._state.messagesPage.newAnswerText,
-      };
-      this._state.messagesPage.Answers.push(newAnswer);
-      this._CallSubscriber(this._state);
-      // this.updateNewAnswerText("");
-    } else if (action.type === "UPDATE-NEW-ANSWER-TEXT") {
-      this._state.messagesPage.newAnswerText = action.newAnswer;
-      this._CallSubscriber(this._state);
-    }
   },
 };
 

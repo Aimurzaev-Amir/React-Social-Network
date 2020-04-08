@@ -6,7 +6,6 @@ let WritePublicationInput = (props) => {
     <div className={stl.writePublicationInput}>
       <input
         onChange={props.onPostChange}
-        ref={props.NewPostElement}
         value={props.newPostText}
         placeholder="Write what you wish"
       />
