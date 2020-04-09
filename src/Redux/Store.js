@@ -213,9 +213,9 @@ let store = {
   },
 
   dispatch(action) {
-      profileReducer(this._state.profilePage, action);
-      messagesReducer(this._state.messagesPage, action);
-      sidebarReducer(this._state.sidebar, action)
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action)
       this._CallSubscriber(this._state);
   },
 };

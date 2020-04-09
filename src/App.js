@@ -9,7 +9,7 @@ import Messages from "./components/MessagesPageComponents/Messages";
 
 let App = (props) => {
   return (
-    <div>
+    <div> 
       <Header />
       <div className="bgColor">
         <Route
