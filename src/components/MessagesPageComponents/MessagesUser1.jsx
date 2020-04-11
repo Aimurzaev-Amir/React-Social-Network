@@ -5,7 +5,7 @@ import Answer from "./Answer";
 import MessageTextArea from "./MessageTextArea";
 
 let Messages1USer = (props) => {
-  let MessagesElements = props.Messages.map((message) => {
+  let MessagesElements = props.MessagesItems.map((message) => {
     return (
       <Message
         id={message.id}
@@ -32,8 +32,9 @@ let Messages1USer = (props) => {
         {AnswersElements}
       </div>
       <MessageTextArea
-        dispatch={props.dispatch}
         newAnswerText={props.newAnswerText}
+        addAnswer={props.addAnswer}
+        updateNewAnswerText={props.updateNewAnswerText}
       />
     </div>
   );

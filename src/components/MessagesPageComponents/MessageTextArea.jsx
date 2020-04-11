@@ -1,17 +1,17 @@
 import React from "react";
 import stl from "./Messages.module.css";
 import SubmitBtn from "./MessagesImg/send.svg";
-import { addAnswerActionCreator , updateNewAnswerTextActionCreator } from "../../Redux/messagesReducer";
+// import { addAnswerActionCreator , updateNewAnswerTextActionCreator } from "../../Redux/messagesReducer";
 
 let MessageTextArea = (props) => {
 
   let addAnswer = () => {
-    props.dispatch(addAnswerActionCreator());
+    props.addAnswer();
   };
 
   let OnMessageChange = (e) => {
     let text = e.target.value;
-    props.dispatch(updateNewAnswerTextActionCreator(text));
+    props.updateNewAnswerText(text);
   };
 
   return (

@@ -31,7 +31,7 @@ let initialState =  {
   {
     id: 6,
     userName: "Ilon Mask",
-    userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend3.jpg"),
+    userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend4.jpg"),
   },
 ],
 

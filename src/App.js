@@ -3,39 +3,22 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import ProfileInfo from "./components/ProfilePageComponents/ProfileInfo";
-import SidebarContent from "./components/SidebarContent";
-import Profile from "./components/ProfilePageComponents/Profile";
-import Messages from "./components/MessagesPageComponents/Messages";
+import SidebarContentContainer from "./components/SidebarComponents/SidebarContentContainer";
+// import Profile from "./components/ProfilePageComponents/Profile";
+// import Messages from "./components/MessagesPageComponents/Messages";
+import ProfileContainer from "./components/ProfilePageComponents/ProfileContainer";
+import MessagesContainer from "./components/MessagesPageComponents/MessagesContainer";
 
 let App = (props) => {
   return (
-    <div> 
+    <div>
       <Header />
       <div className="bgColor">
-        <Route
-          path="/profile"
-          render={() => <ProfileInfo />}
-        />
+        <Route path="/profile" render={() => <ProfileInfo />} />
         <div className="content wrapper">
-          <SidebarContent sidebarPage={props.state.sidebar} />
-          <Route
-            path="/profile"
-            render={() => (
-              <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
-              />
-            )}
-          />
-          <Route
-            path="/messages"
-            render={() => (
-              <Messages
-                messagesPage={props.state.messagesPage}
-                dispatch={props.dispatch}
-              />
-            )}
-          />
+          <SidebarContentContainer store={props.store} />
+          <Route path="/profile" render={() => <ProfileContainer store={props.store} />} />
+          <Route path="/messages" render={ () => <MessagesContainer store={props.store} />} />
         </div>
       </div>
     </div>

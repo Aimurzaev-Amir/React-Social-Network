@@ -11,17 +11,13 @@ let SidebarContent = (props) => {
       <Navbar />
       <div className="OnlineFriendsSidebar">
         <h4>Friends</h4>
-        <FriendsOnlineGrid FriendsSideBar={props.sidebarPage.FriendsSideBar} />
-        <NavLink to="./FriendsPageComponents/Friends.jsx">
-          <ButtonSideBar buttonText="See all online friends" />
-        </NavLink>
+        <FriendsOnlineGrid FriendsSideBar={props.FriendsSideBar} />
+        <NavLink to="./FriendsPageComponents/Friends.jsx"><ButtonSideBar buttonText="See all online friends" /></NavLink>
       </div>
       <div className="GroupsSidebar">
         <h4>Groups</h4>
-        <PopularGroupsGrid GroupsSidebar={props.sidebarPage.GroupsSidebar} />
-        <NavLink to="./FriendsPageComponents/Groups.jsx">
-          <ButtonSideBar buttonText="See all groups" />
-        </NavLink>
+        <PopularGroupsGrid GroupsSidebar={props.GroupsSidebar} />
+        <NavLink to="./FriendsPageComponents/Groups.jsx"><ButtonSideBar buttonText="See all groups" /></NavLink>
       </div>
     </div>
   );

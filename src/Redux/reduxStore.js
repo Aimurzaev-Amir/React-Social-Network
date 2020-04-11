@@ -5,7 +5,7 @@ import sidebarReducer from "../Redux/sidebarReducer"
 
 let reducers = combineReducers({
     profilePage : profileReducer,
-    messagesPage : messagesReducer,
+    messagesPage : messagesReducer, 
     sidebar : sidebarReducer,
 });
 
