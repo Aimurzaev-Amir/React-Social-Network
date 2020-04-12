@@ -4,7 +4,7 @@ import Message from "./Message";
 import Answer from "./Answer";
 import MessageTextArea from "./MessageTextArea";
 
-let Messages1USer = (props) => {
+let UserMessages = (props) => {
   let MessagesElements = props.MessagesItems.map((message) => {
     return (
       <Message
@@ -40,4 +40,4 @@ let Messages1USer = (props) => {
   );
 };
 
-export default Messages1USer;
+export default UserMessages;

@@ -1,7 +1,7 @@
 import React from "react";
 import stl from "./Messages.module.css";
 import DialogItem from "./DialogItem";
-import MessagesUser1 from "./MessagesUser1";
+import UserMessages from "./UserMessages";
 
 let Messages = (props) => {
   let DialogsElements = props.Dialogs.map((dialog) => {
@@ -18,7 +18,7 @@ let Messages = (props) => {
     <div className="pageContentstl">
       <div className={stl.dialogsGrid}>
         <div className={stl.dialogs}>{DialogsElements}</div>
-        <MessagesUser1
+        <UserMessages
           Answers={props.Answers}
           MessagesItems={props.MessagesItems}
           newAnswerText={props.newAnswerText}
