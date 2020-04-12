@@ -1,38 +1,29 @@
 import React from "react";
 import Messages from "./Messages";
-import {
-  addAnswerActionCreator,
-  updateNewAnswerTextActionCreator,
-} from "../../Redux/messagesReducer";
-import StoreContext from "../../StoreContext";
-let MessagesContainer = () => {
-  return (
-    <StoreContext.Consumer>
-      {(store) => {
-        let newAnswerText = store.getState().messagesPage.newAnswerText;
-        let MessagesItems = store.getState().messagesPage.Messages;
-        let Answers = store.getState().messagesPage.Answers;
-        let Dialogs = store.getState().messagesPage.Dialogs;
-      
-        let addAnswer = () => {
-          store.dispatch(addAnswerActionCreator());
-        };
-      
-        let updateNewAnswerText = (text) => {
-          store.dispatch(updateNewAnswerTextActionCreator(text));
-        };
-        return (
-          <Messages
-            Answers={Answers}
-            MessagesItems={MessagesItems}
-            newAnswerText={newAnswerText}
-            addAnswer={addAnswer}
-            updateNewAnswerText={updateNewAnswerText}
-            Dialogs={Dialogs} />
-        );
-      }}
-    </StoreContext.Consumer>
-  );
-};
+import { addAnswerActionCreator, updateNewAnswerTextActionCreator, } from "../../Redux/messagesReducer";
+import { connect } from "react-redux";
+
+
+let mapStateToProps = (state) => {
+  return {
+   newAnswerText: state.messagesPage.newAnswerText,
+   MessagesItems: state.messagesPage.Messages,
+   Answers: state.messagesPage.Answers,
+   Dialogs: state.messagesPage.Dialogs,
+  }
+}
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addAnswer () {
+      dispatch(addAnswerActionCreator());
+    },
+    updateNewAnswerText (text) {
+      dispatch(updateNewAnswerTextActionCreator(text));
+    }
+  }
+}
+
+const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages)
 
 export default MessagesContainer;
