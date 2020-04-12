@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import Messages from "./Messages";
 import { addAnswerActionCreator, updateNewAnswerTextActionCreator, } from "../../Redux/messagesReducer";
 import { connect } from "react-redux";
@@ -10,7 +10,7 @@ let mapStateToProps = (state) => {
    MessagesItems: state.messagesPage.Messages,
    Answers: state.messagesPage.Answers,
    Dialogs: state.messagesPage.Dialogs,
-  }
+  } 
 }
 
 let mapDispatchToProps = (dispatch) => {

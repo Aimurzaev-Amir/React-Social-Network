@@ -3,7 +3,7 @@ import profileReducer from "../Redux/profileReducer"
 import messagesReducer from "../Redux/messagesReducer"
 import sidebarReducer from "../Redux/sidebarReducer"
 
-let reducers = combineReducers({
+let reducers = combineReducers({ 
     profilePage : profileReducer,
     messagesPage : messagesReducer, 
     sidebar : sidebarReducer,

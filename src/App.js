@@ -9,7 +9,7 @@ import SidebarContentContainer from "./components/SidebarComponents/SidebarConte
 import ProfileContainer from "./components/ProfilePageComponents/ProfileContainer";
 import MessagesContainer from "./components/MessagesPageComponents/MessagesContainer";
 
-let App = (props) => {
+let App = () => {
   return (
     <div>
       <Header />
@@ -19,9 +19,6 @@ let App = (props) => {
           <SidebarContentContainer />
           <Route path="/profile" render={() => <ProfileContainer />} />
           <Route path="/messages" render={() => <MessagesContainer />} />
-          {/* <SidebarContentContainer store={props.store} />
-          <Route path="/profile" render={() => <ProfileContainer store={props.store} />} />
-          <Route path="/messages" render={ () => <MessagesContainer store={props.store} />} /> */}
         </div>
       </div>
     </div>

@@ -111,18 +111,20 @@ newAnswerText: ""
 
 const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case addAnswer:
+    case addAnswer: {
       let newAnswer = {
         id: 1,
         userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
         answerText: state.newAnswerText,
       };
-      state.Answers.push(newAnswer);
-      state.newAnswerText = "";
-      return state;
-    case updateNewAnswerText:
-      state.newAnswerText = action.newAnswer;
-      return state;
+      let stateCopy = {...state}
+      stateCopy.Answers.push(newAnswer);
+      stateCopy.newAnswerText = "";
+      return stateCopy; }
+    case updateNewAnswerText: {
+      let stateCopy = {...state}
+      stateCopy.newAnswerText = action.newAnswer;
+      return stateCopy; }
     default:
       return state;
   }
