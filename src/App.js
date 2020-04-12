@@ -16,9 +16,12 @@ let App = (props) => {
       <div className="bgColor">
         <Route path="/profile" render={() => <ProfileInfo />} />
         <div className="content wrapper">
-          <SidebarContentContainer store={props.store} />
+          <SidebarContentContainer />
+          <Route path="/profile" render={() => <ProfileContainer />} />
+          <Route path="/messages" render={() => <MessagesContainer />} />
+          {/* <SidebarContentContainer store={props.store} />
           <Route path="/profile" render={() => <ProfileContainer store={props.store} />} />
-          <Route path="/messages" render={ () => <MessagesContainer store={props.store} />} />
+          <Route path="/messages" render={ () => <MessagesContainer store={props.store} />} /> */}
         </div>
       </div>
     </div>
