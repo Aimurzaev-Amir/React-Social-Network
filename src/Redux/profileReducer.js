@@ -1,4 +1,4 @@
-const addPost = "ADD-POST"; 
+const addPost = "ADD-POST";
 const updateNewPostText = "UPDATE-NEW-POST-TEXT";
 
 let initialState = {
@@ -45,7 +45,7 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case addPost: {
+    case addPost:
       let newPost = {
         id: 3,
         PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
@@ -62,14 +62,16 @@ const profileReducer = (state = initialState, action) => {
         commentNumbers: 0,
         UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
       };
-      let stateCopy = {...state}
-      stateCopy.posts.push(newPost);
-      stateCopy.newPostText = "";
-      return stateCopy;}
-    case updateNewPostText:{
-      let stateCopy = {...state}
-      stateCopy.newPostText = action.newText;
-      return stateCopy; }
+      return {
+        ...state,
+        posts: [...state.posts, newPost],
+        newPostText: "",
+      };
+    case updateNewPostText:
+      return {
+        ...state,
+        newPostText: action.newText,
+      };
     default:
       return state;
   }
