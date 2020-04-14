@@ -117,7 +117,7 @@ const messagesReducer = (state = initialState, action) => {
         userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
         answerText: state.newAnswerText,
       };
-      return {
+      return { 
         ...state,
         Answers: [...state.Answers, newAnswer],
         newAnswerText: "",

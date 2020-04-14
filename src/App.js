@@ -4,10 +4,9 @@ import "./App.css";
 import Header from "./components/Header";
 import ProfileInfo from "./components/ProfilePageComponents/ProfileInfo";
 import SidebarContentContainer from "./components/SidebarComponents/SidebarContentContainer";
-// import Profile from "./components/ProfilePageComponents/Profile";
-// import Messages from "./components/MessagesPageComponents/Messages";
 import ProfileContainer from "./components/ProfilePageComponents/ProfileContainer";
 import MessagesContainer from "./components/MessagesPageComponents/MessagesContainer";
+import FriendsContainer from "./components/FriendsComponents/FriendsContainer";
 
 let App = () => {
   return (
@@ -19,6 +18,7 @@ let App = () => {
           <SidebarContentContainer />
           <Route path="/profile" render={() => <ProfileContainer />} />
           <Route path="/messages" render={() => <MessagesContainer />} />
+          <Route path="/friends" render={() => <FriendsContainer />} />
         </div>
       </div>
     </div>

@@ -8,11 +8,11 @@ let mapStateToProps = (state) => {
   return {
    newAnswerText: state.messagesPage.newAnswerText,
    MessagesItems: state.messagesPage.Messages,
-   Answers: state.messagesPage.Answers,
+   Answers: state.messagesPage.Answers, 
    Dialogs: state.messagesPage.Dialogs,
   } 
 }
-
+ 
 let mapDispatchToProps = (dispatch) => {
   return {
     addAnswer () {

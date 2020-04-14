@@ -6,6 +6,7 @@ let FriendsOnlineGrid = (props) => {
   let FriendsElements = props.FriendsSideBar.map((friend) => {
     return (
       <Friend1
+        key={friend.id}
         id={friend.id}
         FriendImg={friend.FriendImg}
         FriendName={friend.FriendName}

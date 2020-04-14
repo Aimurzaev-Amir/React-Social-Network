@@ -1,0 +1,62 @@
+.friendsGrid {
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 210px 210px 210px;
+  grid-gap: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 100%;
+}
+
+.friend {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #e8eef2;
+}
+.friendBanner {
+  height: 55%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.friendBanner img {
+  width: 100%;
+}
+.friendPhoto {
+  position: absolute;
+  top: 35%;
+  left: 20px;
+  padding: 6px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.friendPhoto img {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
+.friendInfo {
+  margin: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Name{
+    font-size: 14px;
+}
+.status { 
+    margin-top: 10px;
+    font-size: 13px;
+}
+.followedBtn{
+    padding: 5px 10px;
+    border-radius: 30px;
+    background-color: #27AAE1;
+    outline: none;
+    color: #fff;
+    font-size: 12px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import stl from "./Messages.module.css";
-import DialogItem from "./DialogItem";
+import DialogItem from "./DialogItem"; 
 import UserMessages from "./UserMessages";
 
 let Messages = (props) => {

@@ -17,7 +17,7 @@ let Navbar = () => {
       <MyPage />
       <Newsfeeds />
       <NavbarMessages /> 
-      <Friend />
+      <Friend /> 
       <Group />
       <Photo />
       <Songs />
