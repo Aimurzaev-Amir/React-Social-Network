@@ -5,12 +5,12 @@ const unfollow = "UNFOLLOW";
 let initialstate = {
   friends: [ ],
 };
-
+ 
 const friendsReducer = (state = initialstate, action) => {
   switch (action.type) {
     case setFriends:
       return {
-        ...state, friends: [...state.friends, ...action.friends],
+        ...state, friends: [ ...action.friends],
       };
     case follow:
       return { 

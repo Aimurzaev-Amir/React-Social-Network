@@ -8,6 +8,7 @@ let UserMessages = (props) => {
   let MessagesElements = props.MessagesItems.map((message) => {
     return (
       <Message
+        key={message.id}
         id={message.id}
         userPhoto={message.userPhoto}
         messageText={message.messageText}
@@ -18,6 +19,7 @@ let UserMessages = (props) => {
   let AnswersElements = props.Answers.map((answer) => {
     return (
       <Answer
+        key={answer.id}
         id={answer.id}
         userPhoto={answer.userPhoto}
         answerText={answer.answerText}

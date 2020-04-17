@@ -13,7 +13,7 @@ import UserCommentAnswer from "./UserCommentAnswer";
 let PagePublication = (props) => {
   let PagePublicationsElements = props.posts.map((post) => {
     return (
-      <div className={stl.publications}>
+      <div className={stl.publications} key={post.id}>
         <PagePublicationStatus when={post.when} userName={post.userName} />
         <PagePublicationPhoto PublicationPhoto={post.PublicationPhoto} />
         <div className={stl.publicationDescription}>
