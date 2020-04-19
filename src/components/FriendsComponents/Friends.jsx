@@ -1,40 +1,48 @@
 import React from "react";
 import stl from "./Friends.module.css";
 import Friend from "./Friend";
-import Axios from "axios";
 import friendPhoto from "../../assets/user.png";
 import friendBanner from "./FriendsImg/eric-nopanen-624212-unsplash-800x534.jpg";
 
-class Friends extends React.Component {
-  componentDidMount() {
-    Axios.get("https://social-network.samuraijs.com/api/1.0/users?count=9")
-    .then((response) => { this.props.setFriends(response.data.items); });
-  }
-  FriendsElements = this.props.friends.map((friend) => {
+let Friends = (props) => {
+  let FriendsElements = props.friends.map((friend) => {
     return (
       <Friend
         key={friend.id}
         id={friend.id}
-        friendPhoto={
-          friend.friendPhoto != null ? friend.friendPhoto : friendPhoto
-        }
+        friendPhoto={friend.photos.small != null ? friend.photos.small : friendPhoto}
         banner={friend.banner != null ? friend.banner : friendBanner}
         friendName={friend.name}
-        friendStatus={friend.status != null ? friend.status : "status"}
+        friendStatus={friend.status != null ? friend.status : "Friends status"}
         followed={friend.followed}
-        follow={this.props.follow}
-        unfollow={this.props.unfollow}
+        
+        follow={props.follow}
+        unfollow={props.unfollow}
       />
     );
   });
 
-  render() {
-    return (
-      <div className={stl.friendsGrid}>
-        {this.FriendsElements}
-      </div>
-    );
+  let pages = [];
+  // let pagesConter = Math.ceil (props.totalFriends / props.pageSize)
+  // for(let i=1; i<=pagesConter; i++) {
+  for (let i = 1; i <= 10; i++) {
+    pages.push(i);
   }
-}
+  let pagesArray = pages.map((pageNum) => {
+    return (
+      <span
+        className={props.currentPage === pageNum && stl.selectedPage}
+        onClick={() => props.onPageNumberClick(pageNum)} >
+        {pageNum}
+      </span>
+    );
+  });
+  return (
+    <div>
+      {pagesArray}
+      <div className={stl.friendsGrid}>{FriendsElements}</div>
+    </div>
+  );
+};
 
 export default Friends;

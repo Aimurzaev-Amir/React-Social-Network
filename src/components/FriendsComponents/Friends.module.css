@@ -8,7 +8,6 @@
   grid-gap: 20px;
   border-radius: 10px;
   background-color: #fff;
-  height: 100%;
 }
 
 .friend {
@@ -18,13 +17,14 @@
   border-bottom: 1px solid #e8eef2;
 }
 .friendBanner {
-  height: 55%;
+  height: 120px;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 .friendBanner img {
   width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 .friendPhoto {
   position: absolute;
@@ -59,4 +59,12 @@
     outline: none;
     color: #fff;
     font-size: 12px;
+}
+span{
+  margin-right: 10px;
+  cursor: pointer;
+}
+.selectedPage{
+  font-weight: bold;
+  color: red;
 }
