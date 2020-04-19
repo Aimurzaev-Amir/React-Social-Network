@@ -1,24 +1,26 @@
-const setFriends = "SET-FRIENDS";
-const follow = "FOLLOW";
-const unfollow = "UNFOLLOW";
-const setPages = "SETPAGES";
-const setCurrentPage = "SETCURRENTPAGE";
+const setFriendsType = "SET-FRIENDS";
+const followType = "FOLLOW";
+const unfollowType = "UNFOLLOW";
+const setPagesType = "SETPAGES";
+const setCurrentPageType = "SET-CURRENT-PAGE";
+const setPreloaderType = "SET-PRELOADER";
 
 let initialstate = {
   friends: [],
   totalFriends: 200,
   pageSize: 33,
   currentPage: 1,
+  isLoading: false,
 };
 
 const friendsReducer = (state = initialstate, action) => {
   switch (action.type) {
-    case setFriends:
+    case setFriendsType:
       return {
         ...state,
         friends: action.friends,
       };
-    case follow:
+    case followType:
       return {
         ...state,
         friends: state.friends.map((friend) => {
@@ -31,7 +33,7 @@ const friendsReducer = (state = initialstate, action) => {
           return friend;
         }),
       };
-    case unfollow:
+    case unfollowType:
       return {
         ...state,
         friends: state.friends.map((friend) => {
@@ -44,48 +46,63 @@ const friendsReducer = (state = initialstate, action) => {
           return friend;
         }),
       };
-      case setCurrentPage: 
+      case setPagesType:
+        return {
+          ...state, 
+          totalFriends: action.pagesNumber
+        }
+      case setCurrentPageType: 
       return {
         ...state,
         currentPage: action.currentPage,
       }
-
+      case setPreloaderType: 
+      return {
+        ...state,
+        isLoading: action.isLoading
+      }
     default:
       return state;
   }
 };
 
-export const setFriendsAC = (friends) => {
+export const setFriends = (friends) => {
   return {
-    type: setFriends,
+    type: setFriendsType,
     friends,
   };
 };
 
-export const followAC = (userId) => {
+export const follow = (userId) => {
   return {
-    type: follow,
+    type: followType,
     userId,
   };
 };
 
-export const unfollowAC = (userId) => {
+export const unfollow = (userId) => {
   return {
-    type: unfollow,
+    type: unfollowType,
     userId,
   };
 };
-export const setPagesAC = (pagesNumber) => {
+export const setPages = (pagesNumber) => {
   return {
-    type: setPages,
+    type: setPagesType,
     pagesNumber,
   };
 };
-export const setCurrentPageAC = (pageNumber) => {
+export const setCurrentPage = (pageNumber) => {
   return {
-    type: setCurrentPage,
+    type: setCurrentPageType,
     pageNumber,
   };
 };
+
+export const setPreloader = (isLoading) => {
+  return{
+    type: setPreloaderType, isLoading,
+  }
+}
 
 export default friendsReducer;

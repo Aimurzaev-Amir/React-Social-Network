@@ -12,7 +12,9 @@
   background-color: #e8eef2;
 }
 .content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-column-gap: 20px;
 }
 .PageButton {
   width: 100%;
@@ -58,4 +60,11 @@
 }
 .pageContentstl{
   width: 100%;
+}
+.preloader{
+  position: absolute;
+  right: 30%;
+  top: 25%;
+  z-index: 999;
+  
 }

@@ -1,20 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  setFriendsAC,
-  followAC,
-  unfollowAC,
-  setPagesAC,
-  setCurrentPageAC,
+  setFriends,
+  follow,
+  unfollow,
+  setPages,
+  setCurrentPage,
+  setPreloader,
 } from "../../Redux/friendsReducer";
+import Preloader from "../../common/preloader/Preloader.jsx"
 import Axios from "axios";
 import Friends from "./Friends";
 
 class FriendsApiContainer extends React.Component {
   componentDidMount() {
+    this.props.setPreloader(true)
     Axios.get(
       `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
     ).then((response) => {
+      this.props.setPreloader(false)
       this.props.setFriends(response.data.items);
       this.props.setPages(response.data.totalCount);
     });
@@ -22,15 +26,19 @@ class FriendsApiContainer extends React.Component {
 
   onPageNumberClick = (pageNumber) => {
     this.props.setCurrentPage(this.props.currentPage);
+    this.props.setPreloader(true)
     Axios.get(
       `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
     ).then((response) => {
+      this.props.setPreloader(false)
       this.props.setFriends(response.data.items);
     });
   };
 
   render() {
     return (
+      <>
+      {this.props.isLoading ? <Preloader /> : null}
       <Friends
         pageSize={this.props.pageSize}
         totalFriends={this.props.totalFriends}
@@ -40,11 +48,10 @@ class FriendsApiContainer extends React.Component {
         unfollow={this.props.unfollow}
         currentPage={this.props.currentPage}
       />
+      </>
     );
   }
-}
-
-// export default FriendsApiContainer;
+};
 
 let mapStateToProps = (state) => {
   return {
@@ -52,29 +59,34 @@ let mapStateToProps = (state) => {
     totalFriends: state.friendsPage.totalFriends,
     pageSize: state.friendsPage.pageSize,
     currentPage: state.friendsPage.currentPage,
+    isLoading: state.friendsPage.isLoading,
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow(userId) {
-      dispatch(followAC(userId));
-    },
-    unfollow(userId) {
-      dispatch(unfollowAC(userId));
-    },
-    setFriends(friends) {
-      dispatch(setFriendsAC(friends));
-    },
-    setPages(pagesNumber) {
-      dispatch(setPagesAC(pagesNumber));
-    },
-    setCurrentPage(pageNumber) {
-      dispatch(setCurrentPageAC(pageNumber));
-    },
-  };
-};
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     follow(userId) {
+//       dispatch(followAC(userId));
+//     },
+//     unfollow(userId) {
+//       dispatch(unfollowAC(userId));
+//     },
+//     setFriends(friends) {
+//       dispatch(setFriendsAC(friends));
+//     },
+//     setPages(pagesNumber) {
+//       dispatch(setPagesAC(pagesNumber));
+//     },
+//     setCurrentPage(pageNumber) {
+//       dispatch(setCurrentPageAC(pageNumber));
+//     },
+//     setPreloader(isLoading) {
+//       dispatch(setPreloaderAC(isLoading));
+//     }
+//   };
+// };
 
-const FriendsContainer = connect(mapStateToProps,mapDispatchToProps)(FriendsApiContainer);
+const FriendsContainer = connect(mapStateToProps, { follow, unfollow, setFriends, setPages, setCurrentPage, setPreloader })
+                                (FriendsApiContainer);
 
 export default FriendsContainer;

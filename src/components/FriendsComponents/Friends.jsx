@@ -13,7 +13,7 @@ let Friends = (props) => {
         friendPhoto={friend.photos.small != null ? friend.photos.small : friendPhoto}
         banner={friend.banner != null ? friend.banner : friendBanner}
         friendName={friend.name}
-        friendStatus={friend.status != null ? friend.status : "Friends status"}
+        friendStatus={friend.status != null ? friend.status : "Friend status"}
         followed={friend.followed}
         
         follow={props.follow}
@@ -31,7 +31,7 @@ let Friends = (props) => {
   let pagesArray = pages.map((pageNum) => {
     return (
       <span
-        className={props.currentPage === pageNum && stl.selectedPage}
+        className={props.currentPage === pageNum ? stl.selectedPage : null}
         onClick={() => props.onPageNumberClick(pageNum)} >
         {pageNum}
       </span>
