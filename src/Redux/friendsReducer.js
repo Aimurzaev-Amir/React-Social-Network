@@ -6,7 +6,7 @@ const setCurrentPageType = "SET-CURRENT-PAGE";
 const setPreloaderType = "SET-PRELOADER";
 
 let initialstate = {
-  friends: [],
+  friends: [], 
   totalFriends: 200,
   pageSize: 33,
   currentPage: 1,

@@ -3,22 +3,24 @@ import stl from "./Friends.module.css";
 import Friend from "./Friend";
 import friendPhoto from "../../assets/user.png";
 import friendBanner from "./FriendsImg/eric-nopanen-624212-unsplash-800x534.jpg";
+import { NavLink } from "react-router-dom";
 
 let Friends = (props) => {
   let FriendsElements = props.friends.map((friend) => {
     return (
-      <Friend
-        key={friend.id}
-        id={friend.id}
-        friendPhoto={friend.photos.small != null ? friend.photos.small : friendPhoto}
-        banner={friend.banner != null ? friend.banner : friendBanner}
-        friendName={friend.name}
-        friendStatus={friend.status != null ? friend.status : "Friend status"}
-        followed={friend.followed}
-        
-        follow={props.follow}
-        unfollow={props.unfollow}
-      />
+      <NavLink to={'/profile/' + friend.id}>
+        <Friend
+          key={friend.id}
+          id={friend.id}
+          friendPhoto={ friend.photos.small != null ? friend.photos.small : friendPhoto }
+          banner={friend.banner != null ? friend.banner : friendBanner}
+          friendName={friend.name}
+          friendStatus={friend.status != null ? friend.status : "Friend status"}
+          followed={friend.followed}
+          follow={props.follow}
+          unfollow={props.unfollow}
+        />
+      </NavLink>
     );
   });
 
@@ -32,11 +34,13 @@ let Friends = (props) => {
     return (
       <span
         className={props.currentPage === pageNum ? stl.selectedPage : null}
-        onClick={() => props.onPageNumberClick(pageNum)} >
+        onClick={() => props.onPageNumberClick(pageNum)}
+      >
         {pageNum}
       </span>
     );
   });
+
   return (
     <div>
       {pagesArray}

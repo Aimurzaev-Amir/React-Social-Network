@@ -2,11 +2,13 @@ import React from "react";
 import VK from "../ProfileInfoImg/vk.svg";
 import stl from "../ProfileInfo.module.css";
 
-let SocialVk = () => {
+let SocialVk = (props) => {
   return (
-    <div className={`${stl.socialNetwork} ${stl.socialVk}`}>
-      <img src={VK} alt="be able users vk" />
-    </div>
+    <a href={props.vk}>
+      <div className={`${stl.socialNetwork} ${stl.socialVk}`}>
+        <img src={VK} alt="be able users vk" />
+      </div>
+    </a>
   );
 };
 

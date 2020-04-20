@@ -1,7 +1,9 @@
-const addPost = "ADD-POST";
-const updateNewPostText = "UPDATE-NEW-POST-TEXT";
+const addPostType = "ADD-POST";
+const updateNewPostTextType = "UPDATE-NEW-POST-TEXT";
+const setUserProfileType = "SET-USER-PROFILE"
 
 let initialState = {
+  profile: null,
   posts: [
     {
       id: 1,
@@ -45,7 +47,7 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case addPost:
+    case addPostType :
       let newPost = {
         id: 3,
         PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
@@ -67,27 +69,37 @@ const profileReducer = (state = initialState, action) => {
         posts: [...state.posts, newPost],
         newPostText: "",
       };
-    case updateNewPostText:
+    case updateNewPostTextType :
       return {
         ...state,
         newPostText: action.newText,
       };
+      case setUserProfileType:
+        return {
+          ...state,
+          profile: action.ProfileInfo,
+        }
     default:
       return state;
   }
 };
 
-export let addPostActionCreator = () => {
+export let addPost = () => {
   return {
-    type: addPost,
+    type: addPostType,
   };
 };
 
-export let updateNewPostTextActionCreator = (text) => {
+export let updateNewPostText = (newText) => {
   return {
-    type: updateNewPostText,
-    newText: text,
+    type: updateNewPostTextType, newText
   };
 };
+
+export let setUserProfile = (ProfileInfo) => {
+  return {
+    type: setUserProfileType, ProfileInfo
+  }
+}
 
 export default profileReducer;

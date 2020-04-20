@@ -9,11 +9,16 @@ import WritePublication from "./PublicationsComponents/WritePublication/writePub
 import PagePublication from "./PublicationsComponents/PagePublication";
 
 let Profile = (props) => {
+  if (!props.profile) {
+    return <> </>;
+  }
   return (
     <div className="pageContentstl">
       <ContentBar />
       <ContentBanner />
-      <ContentViewProfile />
+      <ContentViewProfile
+        lookingForAJobDescription={props.profile.lookingForAJobDescription}
+      />
       <ContentSkills />
       <ContentStrengths />
       <ContentPortfolio />

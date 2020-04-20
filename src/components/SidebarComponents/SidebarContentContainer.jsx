@@ -6,6 +6,7 @@ let mapStateToProps = (state) => {
   return {
     FriendsSideBar: state.sidebar.FriendsSideBar,
     GroupsSidebar: state.sidebar.GroupsSidebar,
+    userId: state.Auth.userId,
   };
 };
 

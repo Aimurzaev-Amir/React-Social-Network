@@ -6,7 +6,7 @@ let Friend = (props) => {
     props.unfollow(props.id);
   };
 
-  let unfollowOnClick = () => {
+  let unfollowOnClick = () => { 
     props.follow(props.id);
   };
 

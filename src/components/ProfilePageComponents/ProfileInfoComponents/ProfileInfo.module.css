@@ -20,14 +20,19 @@
     display: flex;
   }
   .profilePhoto {
-    width: 160px;
-    height: 160px;
+    padding: 10px;
     margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
+    overflow: hidden;
     background-color: #fff;
+    border-radius: 100%;
+  }
+  .profilePhoto img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
   }
   .profileUser {
     position: absolute;

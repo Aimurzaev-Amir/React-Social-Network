@@ -1,23 +1,23 @@
 import React from "react";
-import HeaderLogo from "./ProfilePageComponents/HeaderComponents/HeaderLogo";
-import HeaderSearch from "./ProfilePageComponents/HeaderComponents/HeaderSearch";
-import HeaderNotifications from "./ProfilePageComponents/HeaderComponents/HeaderNotifications";
-import HeaderMusic from "./ProfilePageComponents/HeaderComponents/HeaderMusic";
-import HeaderUser from "./ProfilePageComponents/HeaderComponents/HeaderUser";
+import HeaderLogo from "./HeaderComponents/HeaderLogo";
+import HeaderSearch from "./HeaderComponents/HeaderSearch";
+import HeaderNotifications from "./HeaderComponents/HeaderNotifications";
+import HeaderMusic from "./HeaderComponents/HeaderMusic";
+import HeaderUser from "./HeaderComponents/HeaderUser";
 
 
-let Header = () => {
+let Header = (props) => {
   return (
     <header>
       <div className="wrapper header-flex-space">
         <div className="header-flex">
           <HeaderLogo />
         <HeaderSearch />
-        <HeaderNotifications />
+        <HeaderNotifications /> 
         <HeaderMusic />
         </div>
-        <div>
-          <HeaderUser />
+        <div> 
+          <HeaderUser isAuth={props.isAuth} login={props.login} profile={props.profile}/>
       </div>
       </div>
         

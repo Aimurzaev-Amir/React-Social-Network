@@ -11,10 +11,10 @@ import Blog from "./NavbarBlog";
 import stl from "../Sidebar.module.css";
 import NavbarMessages from "./NavbarMessages";
 
-let Navbar = () => {
+let Navbar = (props) => {
   return ( 
     <div className={stl.navbar}>
-      <MyPage />
+      <MyPage userId={props.userId}/>
       <Newsfeeds />
       <NavbarMessages /> 
       <Friend /> 

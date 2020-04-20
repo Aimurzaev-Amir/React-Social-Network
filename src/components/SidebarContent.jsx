@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 let SidebarContent = (props) => {
   return (
     <div className="sidebar-content wrapper">
-      <Navbar />
+      <Navbar userId={props.userId} />
       <div className="OnlineFriendsSidebar">
         <h4>Friends</h4>
         <FriendsOnlineGrid FriendsSideBar={props.FriendsSideBar} />

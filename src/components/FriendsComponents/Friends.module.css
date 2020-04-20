@@ -9,7 +9,10 @@
   border-radius: 10px;
   background-color: #fff;
 }
-
+a{
+  color: #000;
+  text-decoration: none;
+}
 .friend {
   position: relative;
   border-radius: 10px;

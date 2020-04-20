@@ -70,8 +70,19 @@ header {
     font-size: 16px;
     color: #fff;
   }
-  .headerUser img:nth-child(2) {
+  .UserPhoto{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 100%;
+  }
+  .UserPhoto img{
+    width: 28.5px;
+    height: 28.5px;
+    border-radius: 100%;
   }
   
   /* Header block END */

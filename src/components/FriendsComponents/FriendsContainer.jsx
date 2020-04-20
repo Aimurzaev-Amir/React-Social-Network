@@ -1,19 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  setFriends,
-  follow,
-  unfollow,
-  setPages,
-  setCurrentPage,
-  setPreloader,
-} from "../../Redux/friendsReducer";
+import { setFriends, follow, unfollow, setPages, setCurrentPage, setPreloader, } from "../../Redux/friendsReducer";
 import Preloader from "../../common/preloader/Preloader.jsx"
 import Axios from "axios";
 import Friends from "./Friends";
 
-class FriendsApiContainer extends React.Component {
-  componentDidMount() {
+class FriendsContainer extends React.Component {
+  componentDidMount() { 
     this.props.setPreloader(true)
     Axios.get(
       `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
@@ -63,30 +56,7 @@ let mapStateToProps = (state) => {
   };
 };
 
-// let mapDispatchToProps = (dispatch) => {
-//   return {
-//     follow(userId) {
-//       dispatch(followAC(userId));
-//     },
-//     unfollow(userId) {
-//       dispatch(unfollowAC(userId));
-//     },
-//     setFriends(friends) {
-//       dispatch(setFriendsAC(friends));
-//     },
-//     setPages(pagesNumber) {
-//       dispatch(setPagesAC(pagesNumber));
-//     },
-//     setCurrentPage(pageNumber) {
-//       dispatch(setCurrentPageAC(pageNumber));
-//     },
-//     setPreloader(isLoading) {
-//       dispatch(setPreloaderAC(isLoading));
-//     }
-//   };
-// };
+export default connect(mapStateToProps, { follow, unfollow, setFriends, setPages, setCurrentPage, setPreloader })
+                      (FriendsContainer);
 
-const FriendsContainer = connect(mapStateToProps, { follow, unfollow, setFriends, setPages, setCurrentPage, setPreloader })
-                                (FriendsApiContainer);
-
-export default FriendsContainer;
+// export default FriendsContainer;
