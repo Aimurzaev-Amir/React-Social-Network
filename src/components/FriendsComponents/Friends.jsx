@@ -3,12 +3,10 @@ import stl from "./Friends.module.css";
 import Friend from "./Friend";
 import friendPhoto from "../../assets/user.png";
 import friendBanner from "./FriendsImg/eric-nopanen-624212-unsplash-800x534.jpg";
-import { NavLink } from "react-router-dom";
 
 let Friends = (props) => {
   let FriendsElements = props.friends.map((friend) => {
     return (
-      <NavLink to={'/profile/' + friend.id}>
         <Friend
           key={friend.id}
           id={friend.id}
@@ -19,8 +17,9 @@ let Friends = (props) => {
           followed={friend.followed}
           follow={props.follow}
           unfollow={props.unfollow}
-        />
-      </NavLink>
+          followingInProgress={props.followingInProgress}
+          followingToggle={props.followingToggle}
+        /> 
     );
   });
 
@@ -32,12 +31,9 @@ let Friends = (props) => {
   }
   let pagesArray = pages.map((pageNum) => {
     return (
-      <span
+      <span key={pageNum}
         className={props.currentPage === pageNum ? stl.selectedPage : null}
-        onClick={() => props.onPageNumberClick(pageNum)}
-      >
-        {pageNum}
-      </span>
+        onClick={() => props.onPageNumberClick(pageNum)} > {pageNum} </span>
     );
   });
 

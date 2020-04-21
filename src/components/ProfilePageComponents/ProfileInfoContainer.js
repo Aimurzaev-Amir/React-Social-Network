@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ProfileInfo from "./ProfileInfo";
-import Axios from "axios";
+import { ProfileAPI } from "../../API/api";
 import { setUserProfile } from "../../Redux/profileReducer";
 import { withRouter } from "react-router-dom";
 import Preloader from "../../common/preloader/Preloader";
@@ -12,12 +12,10 @@ class ProfileInfoContainer extends React.Component {
     if (!userId) {
       return <Preloader />;
     }
-    Axios.get(
-      "https://social-network.samuraijs.com/api/1.0/profile/" + userId
-    ).then((response) => {
-      this.props.setUserProfile(response.data);
+    ProfileAPI.getProfile(userId).then((data) => {
+      this.props.setUserProfile(data);
     });
-  } 
+  }
   render() {
     return <ProfileInfo profile={this.props.profile} />;
   }

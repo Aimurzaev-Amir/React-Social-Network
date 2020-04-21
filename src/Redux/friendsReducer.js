@@ -4,13 +4,15 @@ const unfollowType = "UNFOLLOW";
 const setPagesType = "SETPAGES";
 const setCurrentPageType = "SET-CURRENT-PAGE";
 const setPreloaderType = "SET-PRELOADER";
+const followingToggleType = "FOLLOWING-TOGGLE-TYPE";
 
 let initialstate = {
-  friends: [], 
+  friends: [],
   totalFriends: 200,
   pageSize: 33,
   currentPage: 1,
   isLoading: false,
+  followingInProgress: [],
 };
 
 const friendsReducer = (state = initialstate, action) => {
@@ -46,21 +48,28 @@ const friendsReducer = (state = initialstate, action) => {
           return friend;
         }),
       };
-      case setPagesType:
-        return {
-          ...state, 
-          totalFriends: action.pagesNumber
-        }
-      case setCurrentPageType: 
+    case setPagesType:
       return {
         ...state,
-        currentPage: action.currentPage,
-      }
-      case setPreloaderType: 
+        totalFriends: action.pagesNumber,
+      };
+    case setCurrentPageType:
       return {
         ...state,
-        isLoading: action.isLoading
-      }
+        currentPage: action.pageNumber,
+      };
+    case setPreloaderType:
+      return {
+        ...state,
+        isLoading: action.isLoading,
+      };
+    case followingToggleType:
+      return {
+        ...state,
+        followingInProgress: action.isLoading
+          ? [...state.followingInProgress, action.userId]
+          : state.followingInProgress.filter((id) => id != action.userId),
+      };
     default:
       return state;
   }
@@ -98,11 +107,18 @@ export const setCurrentPage = (pageNumber) => {
     pageNumber,
   };
 };
-
 export const setPreloader = (isLoading) => {
-  return{
-    type: setPreloaderType, isLoading,
-  }
-}
+  return {
+    type: setPreloaderType,
+    isLoading,
+  };
+};
+export const followingToggle = (isLoading, userId) => {
+  return {
+    type: followingToggleType,
+    isLoading,
+    userId,
+  };
+};
 
 export default friendsReducer;

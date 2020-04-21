@@ -23,7 +23,7 @@ let HeaderUser = (props) => {
           <NavLink to="/login">
             <h4>Login</h4>
           </NavLink>
-        </div>
+        </div> 
       )}
     </div>
   );
