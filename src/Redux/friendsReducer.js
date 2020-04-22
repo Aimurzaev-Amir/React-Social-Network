@@ -1,3 +1,5 @@
+import { UsersAPI, FollowAPI } from "../API/api";
+
 const setFriendsType = "SET-FRIENDS";
 const followType = "FOLLOW";
 const unfollowType = "UNFOLLOW";
@@ -68,7 +70,7 @@ const friendsReducer = (state = initialstate, action) => {
         ...state,
         followingInProgress: action.isLoading
           ? [...state.followingInProgress, action.userId]
-          : state.followingInProgress.filter((id) => id != action.userId),
+          : state.followingInProgress.filter((id) => id !== action.userId),
       };
     default:
       return state;
@@ -81,14 +83,12 @@ export const setFriends = (friends) => {
     friends,
   };
 };
-
 export const follow = (userId) => {
   return {
     type: followType,
     userId,
   };
 };
-
 export const unfollow = (userId) => {
   return {
     type: unfollowType,
@@ -120,5 +120,43 @@ export const followingToggle = (isLoading, userId) => {
     userId,
   };
 };
+
+//Thunks
+export const getUsers = (pageNumber = 1, currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(setCurrentPage(pageNumber));
+    dispatch(setPreloader(true));
+    UsersAPI.getState(currentPage, pageSize).then(
+      (data) => {
+        dispatch(setPreloader(false));
+        dispatch(setFriends(data.items));
+        dispatch(setPages(data.totalCount));
+      }
+    );
+  }
+};
+export const setUnfollow = (id) => {
+  return (dispatch) => {
+    dispatch(followingToggle(true, id))
+        FollowAPI.deleteFollow(id).then((data) => {
+          if (data.resultCode === 0) {
+            dispatch(unfollow(id));
+          }
+          dispatch(followingToggle(false, id))
+        });
+  } 
+}
+export const setFollow = (id) => {
+  return (dispatch) => {
+    dispatch(followingToggle(true, id))
+        FollowAPI.postFollow(id).then((data) => {
+          if (data.resultCode === 0) {
+            dispatch(follow(id));
+          }
+          dispatch(followingToggle(false, id))
+        });
+  }
+}
+
 
 export default friendsReducer;

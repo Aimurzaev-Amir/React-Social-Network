@@ -1,3 +1,5 @@
+import {ProfileAPI} from "../API/api"
+
 const addPostType = "ADD-POST";
 const updateNewPostTextType = "UPDATE-NEW-POST-TEXT";
 const setUserProfileType = "SET-USER-PROFILE"
@@ -101,5 +103,14 @@ export let setUserProfile = (ProfileInfo) => {
     type: setUserProfileType, ProfileInfo
   }
 }
+
+//Thunks
+export const setProfile = (userId) => {
+  return (dispatch) => {
+    ProfileAPI.getProfile(userId).then((data) => {
+      dispatch(setUserProfile(data));
+    });
+  }
+};
 
 export default profileReducer;

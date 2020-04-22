@@ -15,10 +15,10 @@ let Friends = (props) => {
           friendName={friend.name}
           friendStatus={friend.status != null ? friend.status : "Friend status"}
           followed={friend.followed}
-          follow={props.follow}
-          unfollow={props.unfollow}
           followingInProgress={props.followingInProgress}
-          followingToggle={props.followingToggle}
+          //thunks
+          setFollow={props.setFollow}
+          setUnfollow={props.setUnfollow}
         /> 
     );
   });

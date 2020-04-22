@@ -1,53 +1,37 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  setFriends,
-  follow,
-  unfollow,
-  setPages,
-  setCurrentPage,
-  setPreloader,
-  followingToggle,
+  getUsers,
+  setFollow,
+  setUnfollow,
 } from "../../Redux/friendsReducer";
 import Preloader from "../../common/preloader/Preloader.jsx";
 import Friends from "./Friends";
-import { UsersAPI } from "../../API/api";
 
 class FriendsContainer extends React.Component {
   componentDidMount() {
-    this.props.setPreloader(true);
-    UsersAPI.getState(this.props.currentPage, this.props.pageSize).then(
-      (data) => {
-        this.props.setPreloader(false);
-        this.props.setFriends(data.items);
-        this.props.setPages(data.totalCount);
-      }
-    );
+    this.props.getUsers(this.props.currentPage, this.props.pageSize);
   }
 
   onPageNumberClick = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-    this.props.setPreloader(true);
-    UsersAPI.getState(pageNumber, this.props.pageSize).then((data) => {
-      this.props.setPreloader(false);
-      this.props.setFriends(data.items);
-    });
+    this.props.getUsers(pageNumber, pageNumber, this.props.pageSize);
   };
- 
+
   render() {
     return (
       <>
         {this.props.isLoading ? <Preloader /> : null}
         <Friends
+          //data from state
           pageSize={this.props.pageSize}
           totalFriends={this.props.totalFriends}
           onPageNumberClick={this.onPageNumberClick}
           friends={this.props.friends}
-          follow={this.props.follow}
-          unfollow={this.props.unfollow}
           currentPage={this.props.currentPage}
           followingInProgress={this.props.followingInProgress}
-          followingToggle={this.props.followingToggle}
+          //thunks
+          setFollow={this.props.setFollow}
+          setUnfollow={this.props.setUnfollow}
         />
       </>
     );
@@ -65,14 +49,6 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  follow,
-  unfollow,
-  setFriends,
-  setPages,
-  setCurrentPage,
-  setPreloader,
-  followingToggle,
-})(FriendsContainer);
+export default connect(mapStateToProps, {getUsers, setFollow, setUnfollow, })(FriendsContainer);
 
 // export default FriendsContainer;

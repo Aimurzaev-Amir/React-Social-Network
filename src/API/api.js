@@ -11,7 +11,7 @@ export const ProfileAPI = {
       return response.data;
     });
   },
-}; 
+};
 export const UsersAPI = {
   getState(currentPage, pageSize) {
     return instance

@@ -1,20 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import ProfileInfo from "./ProfileInfo";
-import { ProfileAPI } from "../../API/api";
-import { setUserProfile } from "../../Redux/profileReducer";
 import { withRouter } from "react-router-dom";
 import Preloader from "../../common/preloader/Preloader";
+import {setProfile} from "../../Redux/profileReducer"
 
 class ProfileInfoContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {
-      return <Preloader />;
+      return <Preloader />; 
     }
-    ProfileAPI.getProfile(userId).then((data) => {
-      this.props.setUserProfile(data);
-    });
+    this.props.setProfile(userId)
+    // ProfileAPI.getProfile(userId).then((data) => {
+    //   this.props.setUserProfile(data);
+    // });
   }
   render() {
     return <ProfileInfo profile={this.props.profile} />;
@@ -29,4 +29,4 @@ let mapStateToProps = (state) => {
 
 let setUserIdToURL = withRouter(ProfileInfoContainer);
 
-export default connect(mapStateToProps, { setUserProfile })(setUserIdToURL);
+export default connect(mapStateToProps, { setProfile })(setUserIdToURL);

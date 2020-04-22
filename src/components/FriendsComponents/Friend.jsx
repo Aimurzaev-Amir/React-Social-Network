@@ -1,34 +1,20 @@
 import React from "react";
 import stl from "./Friends.module.css";
 import { NavLink } from "react-router-dom";
-import { FollowAPI } from "../../API/api";
 
 let Friend = (props) => {
   let followedA = props.followed 
-      ? (<button
+  ? (
+    <button
       disabled={props.followingInProgress.some((id) => id === props.id)}
-      onClick={() => {
-        props.followingToggle(true, props.id)
-        FollowAPI.deleteFollow(props.id).then((data) => {
-          if (data.resultCode === 0) {
-            props.unfollow(props.id);
-          }
-          props.followingToggle(false, props.id)
-        });
-      }}
-      className={stl.followedBtn}>unfollow</button> ) 
-      : (<button 
-        disabled={props.followingInProgress.some((id) => id === props.id)}
-        onClick={() => {
-        props.followingToggle(true, props.id)
-        FollowAPI.postFollow(props.id).then((data) => {
-          if (data.resultCode === 0) {
-            props.follow(props.id);
-          }
-          props.followingToggle(false, props.id)
-        });
-      }}
-      className={stl.followedBtn}>follow</button> );
+      onClick={() => { props.setUnfollow(props.id); }}
+      className={stl.followedBtn} >unfollow</button>
+  ) : (
+    <button
+      disabled={props.followingInProgress.some((id) => id === props.id)}
+      onClick={() => {props.setFollow(props.id);}}
+      className={stl.followedBtn}>follow</button>
+  );
 
   return (
     <div className={stl.friend}>
