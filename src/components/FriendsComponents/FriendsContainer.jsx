@@ -1,16 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  getUsers,
-  setFollow,
-  setUnfollow,
-} from "../../Redux/friendsReducer";
+import { getUsers, setFollow, setUnfollow } from "../../Redux/friendsReducer";
 import Preloader from "../../common/preloader/Preloader.jsx";
 import Friends from "./Friends";
+import { compose } from "redux";
+import { withAuthRedirect } from "../hoc/withRedirect";
 
 class FriendsContainer extends React.Component {
   componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize);
+    this.props.getUsers(
+      this.props.currentPage,
+      this.props.currentPage,
+      this.props.pageSize
+    );
   }
 
   onPageNumberClick = (pageNumber) => {
@@ -49,6 +51,8 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {getUsers, setFollow, setUnfollow, })(FriendsContainer);
+export default compose(
+  connect(mapStateToProps, { getUsers, setFollow, setUnfollow }),
+  withAuthRedirect
+)(FriendsContainer);
 
-// export default FriendsContainer;

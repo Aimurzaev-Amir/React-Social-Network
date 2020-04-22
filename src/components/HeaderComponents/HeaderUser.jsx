@@ -7,7 +7,8 @@ import { NavLink } from "react-router-dom";
 let HeaderUser = (props) => {
   return (
     <div className={stl.headerUser}>
-      {props.isAuth ? (
+      {props.isAuth 
+      ? (
         <div className={stl.headerUser}>
           <h4>{props.login}</h4>
           <div className={stl.UserPhoto}>

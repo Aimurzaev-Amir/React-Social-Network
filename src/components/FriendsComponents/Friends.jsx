@@ -6,7 +6,7 @@ import friendBanner from "./FriendsImg/eric-nopanen-624212-unsplash-800x534.jpg"
 
 let Friends = (props) => {
   let FriendsElements = props.friends.map((friend) => {
-    return (
+    return ( 
         <Friend
           key={friend.id}
           id={friend.id}

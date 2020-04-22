@@ -7,6 +7,7 @@ import ProfileContainer from "./components/ProfilePageComponents/ProfileContaine
 import MessagesContainer from "./components/MessagesPageComponents/MessagesContainer";
 import FriendsContainer from "./components/FriendsComponents/FriendsContainer";
 import HeaderContainer from "./components/HeaderComponents/HeaderContainer";
+import Login from "./components/LoginComponents/Login";
 
 let App = () => { 
   return (
@@ -19,6 +20,7 @@ let App = () => {
           <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
           <Route path="/messages" render={() => <MessagesContainer />} />
           <Route path="/friends" render={() => <FriendsContainer />} />
+          <Route path="/login" render={() => <Login />} />
         </div>
       </div> 
     </div>

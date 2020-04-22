@@ -3,9 +3,11 @@ import {ProfileAPI} from "../API/api"
 const addPostType = "ADD-POST";
 const updateNewPostTextType = "UPDATE-NEW-POST-TEXT";
 const setUserProfileType = "SET-USER-PROFILE"
+const setOpenedProfileIdType = "SET-OPENED-PROFILE-TYPE"
 
 let initialState = {
   profile: null,
+  openedProfileId: '',
   posts: [
     {
       id: 1,
@@ -81,6 +83,11 @@ const profileReducer = (state = initialState, action) => {
           ...state,
           profile: action.ProfileInfo,
         }
+      case setOpenedProfileIdType:
+        return{
+          ...state,
+          openedProfileId: action.userId
+        }
     default:
       return state;
   }
@@ -103,7 +110,11 @@ export let setUserProfile = (ProfileInfo) => {
     type: setUserProfileType, ProfileInfo
   }
 }
-
+export let setOpenedProfileId = (userId) => {
+  return{
+    type: setOpenedProfileIdType, userId
+  }
+}
 //Thunks
 export const setProfile = (userId) => {
   return (dispatch) => {

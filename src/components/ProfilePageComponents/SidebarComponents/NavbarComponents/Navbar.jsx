@@ -14,7 +14,7 @@ import NavbarMessages from "./NavbarMessages";
 let Navbar = (props) => {
   return ( 
     <div className={stl.navbar}>
-      <MyPage userId={props.userId}/>
+      <MyPage userId={props.userId} />
       <Newsfeeds />
       <NavbarMessages /> 
       <Friend /> 
@@ -25,7 +25,7 @@ let Navbar = (props) => {
       <Events />
       <Blog />
     </div>
-  );
+  ); 
 };
 
 export default Navbar;

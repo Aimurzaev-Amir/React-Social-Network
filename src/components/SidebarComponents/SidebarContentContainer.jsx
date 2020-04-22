@@ -19,3 +19,4 @@ let mapDispatchToProps = (dispatch) => {
 const SidebarContentContainer = connect( mapStateToProps, mapDispatchToProps )(SidebarContent);
 
 export default SidebarContentContainer;
+ 

@@ -120,7 +120,7 @@ export const followingToggle = (isLoading, userId) => {
     userId,
   };
 };
-
+ 
 //Thunks
 export const getUsers = (pageNumber = 1, currentPage, pageSize) => {
   return (dispatch) => {

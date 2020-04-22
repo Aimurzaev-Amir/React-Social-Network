@@ -8,7 +8,7 @@ let initialState = {
   email: null,
   isAuth: false,
 };
-
+ 
 const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case setUserAuthType:

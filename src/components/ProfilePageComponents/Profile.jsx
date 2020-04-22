@@ -7,10 +7,14 @@ import ContentStrengths from "./Content/ContentStrengths/ContentStrengths";
 import ContentPortfolio from "./Content/ContentPortfolio/ContentPortfolio";
 import WritePublication from "./PublicationsComponents/WritePublication/writePublication";
 import PagePublication from "./PublicationsComponents/PagePublication";
+import Preloader from "../../common/preloader/Preloader";
+
 
 let Profile = (props) => {
-  if (!props.profile) {
-    return <> </>;
+  if(!props.profile) {
+    return(
+      <Preloader />
+    )
   }
   return (
     <div className="pageContentstl">
