@@ -2,7 +2,7 @@
 import Profile from "./Profile";
 import { addPost, updateNewPostText } from "../../Redux/profileReducer";
 import { connect } from "react-redux";
-import { withAuthRedirect } from "../hoc/withRedirect";
+import { withAuthRedirect } from "../../hoc/withRedirect";
 import { compose } from "redux";
 
 

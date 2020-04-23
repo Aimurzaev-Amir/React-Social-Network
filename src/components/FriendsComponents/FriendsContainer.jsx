@@ -4,7 +4,7 @@ import { getUsers, setFollow, setUnfollow } from "../../Redux/friendsReducer";
 import Preloader from "../../common/preloader/Preloader.jsx";
 import Friends from "./Friends";
 import { compose } from "redux";
-import { withAuthRedirect } from "../hoc/withRedirect";
+import { withAuthRedirect } from "../../hoc/withRedirect";
 
 class FriendsContainer extends React.Component {
   componentDidMount() {

@@ -3,33 +3,44 @@ import { connect } from "react-redux";
 import ProfileInfo from "./ProfileInfo";
 import { withRouter } from "react-router-dom";
 import Preloader from "../../common/preloader/Preloader";
-import {setProfile, setOpenedProfileId} from "../../Redux/profileReducer"
+import { setProfile, getUserStatus, updateUserStatus} from "../../Redux/profileReducer";
+import { compose } from "redux";
 
 class ProfileInfoContainer extends React.Component {
   componentDidMount() {
-    // this.props.setOpenedProfileId(this.props.match.params.userId)
-    // if(!this.props.openedProfileId){
-    //   return <Preloader />; 
-    // }
-    // this.props.setProfile(this.props.openedProfileId)
     let userId = this.props.match.params.userId;
     if (!userId) {
-      return <Preloader />; 
+      return <Preloader />;
     }
-    this.props.setProfile(userId)
+    this.props.setProfile(userId);
+    this.props.getUserStatus(userId)
   }
+
   render() {
-    return <ProfileInfo profile={this.props.profile} />;
+    return (
+      <ProfileInfo
+        profile={this.props.profile}
+        // editMode={this.state.editMode}
+        // localStatus={this.state.localStatus}
+        // SaveStatus={this.SaveStatus}
+        // ChangeStatus={this.ChangeStatus}
+        status={this.props.status}
+        // onStatusChange={this.props.onStatusChange}
+        updateUserStatus={this.props.updateUserStatus}
+      />
+    );
   }
 }
 
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
-    openedProfileId: state.profilePage.openedProfileId
+    openedProfileId: state.profilePage.openedProfileId,
+    status: state.profilePage.status,
   };
 };
 
-let setUserIdFromURL = withRouter(ProfileInfoContainer);
-
-export default connect(mapStateToProps, { setProfile, setOpenedProfileId })(setUserIdFromURL); 
+export default compose(
+  connect(mapStateToProps, { setProfile, getUserStatus, updateUserStatus }),
+  withRouter
+)(ProfileInfoContainer);

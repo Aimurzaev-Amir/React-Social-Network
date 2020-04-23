@@ -1,13 +1,14 @@
-import {ProfileAPI} from "../API/api"
+import { ProfileAPI } from "../API/api";
 
 const addPostType = "ADD-POST";
 const updateNewPostTextType = "UPDATE-NEW-POST-TEXT";
-const setUserProfileType = "SET-USER-PROFILE"
-const setOpenedProfileIdType = "SET-OPENED-PROFILE-TYPE"
+const setUserProfileType = "SET-USER-PROFILE";
+const setOpenedProfileIdType = "SET-OPENED-PROFILE";
+const setUserStatusType = "SET-USER-STATUS";
 
 let initialState = {
   profile: null,
-  openedProfileId: '',
+  status: "",
   posts: [
     {
       id: 1,
@@ -51,7 +52,7 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case addPostType :
+    case addPostType:
       let newPost = {
         id: 3,
         PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
@@ -73,21 +74,26 @@ const profileReducer = (state = initialState, action) => {
         posts: [...state.posts, newPost],
         newPostText: "",
       };
-    case updateNewPostTextType :
+    case updateNewPostTextType:
       return {
         ...state,
         newPostText: action.newText,
       };
-      case setUserProfileType:
-        return {
-          ...state,
-          profile: action.ProfileInfo,
-        }
-      case setOpenedProfileIdType:
-        return{
-          ...state,
-          openedProfileId: action.userId
-        }
+    case setUserProfileType:
+      return {
+        ...state,
+        profile: action.ProfileInfo,
+      };
+    case setOpenedProfileIdType:
+      return {
+        ...state,
+        openedProfileId: action.userId,
+      };
+    case setUserStatusType:
+      return {
+        ...state,
+        status: action.userStatus,
+      };
     default:
       return state;
   }
@@ -101,27 +107,53 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
   return {
-    type: updateNewPostTextType, newText
+    type: updateNewPostTextType,
+    newText,
   };
 };
 
 export let setUserProfile = (ProfileInfo) => {
   return {
-    type: setUserProfileType, ProfileInfo
-  }
-}
+    type: setUserProfileType,
+    ProfileInfo,
+  };
+};
 export let setOpenedProfileId = (userId) => {
-  return{
-    type: setOpenedProfileIdType, userId
-  }
-}
+  return {
+    type: setOpenedProfileIdType,
+    userId,
+  };
+};
+export let setUserStatus = (status) => {
+  return {
+    type: setUserStatusType,
+    status,
+  };
+};
+
 //Thunks
 export const setProfile = (userId) => {
   return (dispatch) => {
     ProfileAPI.getProfile(userId).then((data) => {
       dispatch(setUserProfile(data));
     });
-  }
+  };
 };
-
+export const getUserStatus = (userId) => {
+  return (dispatch) => {
+    ProfileAPI.getStatus(userId).then((data) => {
+      dispatch(setUserStatus(data));
+    });
+  };
+};
+export const updateUserStatus = (status) => {
+  return (dispatch) => {
+    ProfileAPI.puStatus(status).then((data) => {
+      if(data.resultCode === 0) {
+        dispatch(setUserStatus(status))
+      }
+      
+    })
+  }
+}
 export default profileReducer;

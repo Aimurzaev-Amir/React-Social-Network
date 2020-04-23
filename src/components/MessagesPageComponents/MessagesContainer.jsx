@@ -6,7 +6,7 @@ import {
 } from "../../Redux/messagesReducer";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withAuthRedirect } from "../hoc/withRedirect";
+import { withAuthRedirect } from "../../hoc/withRedirect";
 
 let mapStateToProps = (state) => {
   return {

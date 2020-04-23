@@ -11,6 +11,16 @@ export const ProfileAPI = {
       return response.data;
     });
   },
+  getStatus(userId) {
+    return instance.get("profile/status/" + userId).then((response) => {
+      return response.statusText
+    })
+  },
+  puStatus(status) {
+    return instance.put("profile/status", {status: status}).then((response) => {
+      return response.data
+    })
+  }
 };
 export const UsersAPI = {
   getState(currentPage, pageSize) {
