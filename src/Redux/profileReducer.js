@@ -73,7 +73,7 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         posts: [...state.posts, newPost],
         newPostText: "",
-      };
+      }; 
     case updateNewPostTextType:
       return {
         ...state,
@@ -84,15 +84,10 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         profile: action.ProfileInfo,
       };
-    case setOpenedProfileIdType:
-      return {
-        ...state,
-        openedProfileId: action.userId,
-      };
     case setUserStatusType:
       return {
         ...state,
-        status: action.userStatus,
+        status: action.status,
       };
     default:
       return state;
@@ -118,16 +113,9 @@ export let setUserProfile = (ProfileInfo) => {
     ProfileInfo,
   };
 };
-export let setOpenedProfileId = (userId) => {
-  return {
-    type: setOpenedProfileIdType,
-    userId,
-  };
-};
 export let setUserStatus = (status) => {
   return {
-    type: setUserStatusType,
-    status,
+    type: setUserStatusType, status,
   };
 };
 

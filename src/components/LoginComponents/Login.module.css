@@ -1,4 +1,15 @@
 .loginMain{
-    margin-top: 50px;
-    
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 25px;
+}
+.rememberCheckbox{
+    display: flex;
+    align-items: center;
+}
+.rememberCheckbox p {
+    margin-left: 5px;
+}
+.loginForm input{
 }

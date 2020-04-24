@@ -1,24 +1,5 @@
 import React from "react";
 
-// let ProfileStatus = (props) => {
-//   return (
-//     <div>
-//       {props.editMode ? (
-//         <input
-//           onChange={props.onStatusChange}
-//           autoFocus={true}
-//           onBlur={props.SaveStatus}
-//           type="text"
-//           value={props.localStatus}
-//         />
-//       ) : (
-//         <p onClick={props.ChangeStatus}>
-//           {props.status ? props.status : "User status"}
-//         </p>
-//       )}
-//     </div>
-//   );
-// };
 
 class ProfileStatus extends React.Component {
   state = {
@@ -36,12 +17,19 @@ class ProfileStatus extends React.Component {
     });
     this.props.updateUserStatus(this.state.localStatus)
   };
-
   onStatusChange = (e) => {
     this.setState({
       localStatus: e.target.value,
     })
   }
+  componentDidUpdate(prevProps, prevState) {
+    if(prevProps.status !== this.props.status) {
+      this.setState({
+        localStatus: this.props.status,
+      })
+    }
+  }
+
   render() {
     return(
       <div>

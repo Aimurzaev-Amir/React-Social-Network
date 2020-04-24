@@ -8,14 +8,22 @@ import { compose } from "redux";
 
 class ProfileInfoContainer extends React.Component {
   componentDidMount() {
-    let userId = this.props.match.params.userId;
-    if (!userId) {
+    if (!this.state.userId) {
       return <Preloader />;
     }
-    this.props.setProfile(userId);
-    this.props.getUserStatus(userId)
+    this.props.setProfile(this.state.userId);
+    this.props.getUserStatus(this.state.userId)
   }
-
+  state = {
+    userId: this.props.match.params.userId,
+  }
+  // componentDidUpdate(prevProps, prevState){
+  //   if(prevState.userId !== this.props.match.params.userId){
+  //     this.setState({
+  //       userId: this.props.match.params.userId,
+  //     })
+  //   }
+  // }
   render() {
     return (
       <ProfileInfo
@@ -26,7 +34,7 @@ class ProfileInfoContainer extends React.Component {
         // ChangeStatus={this.ChangeStatus}
         status={this.props.status}
         // onStatusChange={this.props.onStatusChange}
-        updateUserStatus={this.props.updateUserStatus}
+        updateUserStatus = {this.props.updateUserStatus}
       />
     );
   }
