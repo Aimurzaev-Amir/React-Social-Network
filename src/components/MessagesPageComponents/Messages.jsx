@@ -22,9 +22,7 @@ let Messages = (props) => {
         <UserMessages
           Answers={props.Answers}
           MessagesItems={props.MessagesItems}
-          newAnswerText={props.newAnswerText}
           addAnswer={props.addAnswer}
-          updateNewAnswerText={props.updateNewAnswerText}
         />
       </div>
     </div>

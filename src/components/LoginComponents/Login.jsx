@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <div className={stl.loginMain}>
       <h1>Login</h1>
-      <ReduxLoginForm onSubmit={onSubmit} />
+      <ReduxLoginForm onSubmit={onSubmit} /> 
     </div>
   );
 };

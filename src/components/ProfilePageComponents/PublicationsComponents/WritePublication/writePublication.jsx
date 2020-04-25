@@ -4,31 +4,22 @@ import WritePublicationInput from "./WritePublicationInput";
 import WritePublicationAdditionals from "./WritePublicationAdditionals";
 import Publicbtn from "./Publicbtn";
 import stl from "../Publications.module.css";
+import { reduxForm } from "redux-form";
 // import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../../Redux/profileReducer";
 
 let WritePublication = (props) => {
-  let addPost = () => {
-    props.addPost();
-  };
-
-  let onPostChange = (e) => {
-    let text = e.target.value;
-    props.updateNewPostText(text);
-  };
-
   return (
     <div className={stl.writePublicationBg}>
-      <div className={stl.writePublication}>
+      <form className={stl.writePublication} onSubmit={props.handleSubmit}>
         <WritePublicationPhoto />
-        <WritePublicationInput
-          newPostText={props.newPostText}
-          onPostChange={onPostChange}
-        />
+        <WritePublicationInput />
         <WritePublicationAdditionals />
-        <Publicbtn addPost={addPost} />
-      </div>
+        <Publicbtn />
+      </form>
     </div>
   );
 };
 
-export default WritePublication;
+const PostReduxForm = reduxForm({ form: "Posts" })(WritePublication);
+
+export default PostReduxForm;

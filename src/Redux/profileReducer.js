@@ -1,9 +1,7 @@
 import { ProfileAPI } from "../API/api";
 
 const addPostType = "ADD-POST";
-const updateNewPostTextType = "UPDATE-NEW-POST-TEXT";
 const setUserProfileType = "SET-USER-PROFILE";
-const setOpenedProfileIdType = "SET-OPENED-PROFILE";
 const setUserStatusType = "SET-USER-STATUS";
 
 let initialState = {
@@ -47,7 +45,6 @@ let initialState = {
       UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
     },
   ],
-  newPostText: "",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -58,7 +55,7 @@ const profileReducer = (state = initialState, action) => {
         PublicationPhoto: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/PublishedPhoto.jpg"),
         UserComment1: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/UserComment1.png"),
         userName: "Amir Aimurzayev",
-        publicationText: state.newPostText,
+        publicationText: action.newPostText,
         likes: 0,
         dislikes: 0,
         Time: "0 mins",
@@ -72,12 +69,6 @@ const profileReducer = (state = initialState, action) => {
       return {
         ...state,
         posts: [...state.posts, newPost],
-        newPostText: "",
-      }; 
-    case updateNewPostTextType:
-      return {
-        ...state,
-        newPostText: action.newText,
       };
     case setUserProfileType:
       return {
@@ -94,23 +85,15 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export let addPost = () => {
+export let addPost = (newPostText) => {
   return {
-    type: addPostType,
-  };
-};
-
-export let updateNewPostText = (newText) => {
-  return {
-    type: updateNewPostTextType,
-    newText,
+    type: addPostType, newPostText,
   };
 };
 
 export let setUserProfile = (ProfileInfo) => {
   return {
-    type: setUserProfileType,
-    ProfileInfo,
+    type: setUserProfileType, ProfileInfo,
   };
 };
 export let setUserStatus = (status) => {
@@ -137,11 +120,10 @@ export const getUserStatus = (userId) => {
 export const updateUserStatus = (status) => {
   return (dispatch) => {
     ProfileAPI.puStatus(status).then((data) => {
-      if(data.resultCode === 0) {
-        dispatch(setUserStatus(status))
+      if (data.resultCode === 0) {
+        dispatch(setUserStatus(status));
       }
-      
-    })
-  }
-}
+    });
+  };
+};
 export default profileReducer;

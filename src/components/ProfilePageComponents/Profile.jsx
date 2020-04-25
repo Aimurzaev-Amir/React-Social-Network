@@ -9,28 +9,22 @@ import WritePublication from "./PublicationsComponents/WritePublication/writePub
 import PagePublication from "./PublicationsComponents/PagePublication";
 import Preloader from "../../common/preloader/Preloader";
 
-
 let Profile = (props) => {
-  if(!props.profile) {
-    return(
-      <Preloader />
-    )
+  if (!props.profile) {
+    return <Preloader />;
   }
+  const sendPost = (newPost) => {
+    props.addPost(newPost.newPostText);
+  };
   return (
     <div className="pageContentstl">
       <ContentBar />
       <ContentBanner />
-      <ContentViewProfile
-        lookingForAJobDescription={props.profile.lookingForAJobDescription}
-      />
+      <ContentViewProfile lookingForAJobDescription={props.profile.lookingForAJobDescription} />
       <ContentSkills />
       <ContentStrengths />
       <ContentPortfolio />
-      <WritePublication
-        newPostText={props.newPostText}
-        updateNewPostText={props.updateNewPostText}
-        addPost={props.addPost}
-      />
+      <WritePublication onSubmit={sendPost} />
       <PagePublication posts={props.posts} />
     </div>
   );

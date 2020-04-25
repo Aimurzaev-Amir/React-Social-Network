@@ -7,7 +7,7 @@
 /* .dialogs{
   overflow-y: scroll;
 } */
-.dialogs a{
+.dialogs a {
   text-decoration: none;
   color: #000;
 }
@@ -36,7 +36,7 @@
 .UserName {
   margin-left: 10px;
 }
-.messagesWindow{
+.messagesWindow {
   position: relative;
   height: 85vh;
   border-radius: 10px;
@@ -48,33 +48,39 @@
   position: relative;
   height: 90%;
   overflow-y: scroll;
-} 
-.messageInput{
+}
+.messageInput {
   position: absolute;
   bottom: 15px;
   width: 100%;
   display: flex;
   align-items: center;
 }
-.messageInput input{
+.messageInput textarea {
   position: relative;
   width: 100%;
   max-width: 595px;
-  padding: 10px 15px;
+  padding: 10px 55px 10px 15px;
   border-radius: 20px;
   outline: none;
+  resize: none;
 }
-.submitMessageBtn{
- position: absolute;
- right: 60px;
- width: 30px;
- height: 30px;
- cursor: pointer;
+.sendButton {
+  position: relative;
+  right: 50px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }
 .message {
   padding: 5px;
   border-radius: 10px;
-  background-color: #E8EEF2;
+  background-color: #e8eef2;
   margin-bottom: 10px;
   display: flex;
   align-items: center;

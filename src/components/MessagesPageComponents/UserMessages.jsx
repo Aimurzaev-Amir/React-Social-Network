@@ -27,17 +27,16 @@ let UserMessages = (props) => {
     );
   });
 
+  const sendMessage = (newAnswerText) => {
+    props.addAnswer(newAnswerText.newMessage);
+  };
   return (
     <div className={stl.messagesWindow}>
       <div className={stl.messages}>
         {MessagesElements}
         {AnswersElements}
       </div>
-      <MessageTextArea
-        newAnswerText={props.newAnswerText}
-        addAnswer={props.addAnswer}
-        updateNewAnswerText={props.updateNewAnswerText}
-      />
+      <MessageTextArea addAnswer={props.addAnswer} onSubmit={sendMessage} />
     </div>
   );
 };

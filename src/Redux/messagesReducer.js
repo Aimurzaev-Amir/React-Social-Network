@@ -1,5 +1,4 @@
-const addAnswer = "ADD-ANSWER";
-const updateNewAnswerText = "UPDATE-NEW-ANSWER-TEXT";
+const addAnswerType = "ADD-ANSWER";
 
 let initialState = {
   Dialogs: [
@@ -106,43 +105,30 @@ let initialState = {
         "It was great! You will not belive me, but there were Maroon 5!",
     },
   ],
-  newAnswerText: "",
 };
 
 const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case addAnswer:
+    case addAnswerType:
       let newAnswer = {
         id: 1,
         userPhoto: require("../components/MessagesPageComponents/MessagesImg/Friend2.jpg"),
-        answerText: state.newAnswerText,
+        answerText: action.newAnswerText,
       };
       return { 
         ...state,
         Answers: [...state.Answers, newAnswer],
-        newAnswerText: "",
-      };
-    case updateNewAnswerText:
-      return {
-        ...state,
-        newAnswerText: action.newAnswer,
       };
     default:
       return state;
   }
 };
 
-export let addAnswerActionCreator = () => {
+export const addAnswer = (newAnswerText) => {
   return {
-    type: addAnswer,
+    type: addAnswerType, newAnswerText
   };
 };
 
-export let updateNewAnswerTextActionCreator = (text) => {
-  return {
-    type: updateNewAnswerText,
-    newAnswer: text,
-  };
-};
 
 export default messagesReducer;

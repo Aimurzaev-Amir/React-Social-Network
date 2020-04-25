@@ -1,31 +1,23 @@
 import React from "react";
 import stl from "./Messages.module.css";
 import SubmitBtn from "./MessagesImg/send.svg";
-// import { addAnswerActionCreator , updateNewAnswerTextActionCreator } from "../../Redux/messagesReducer";
+import { reduxForm, Field } from "redux-form";
 
 let MessageTextArea = (props) => {
-
-  let addAnswer = () => {
-    props.addAnswer();
-  };
-
-  let OnMessageChange = (e) => {
-    let text = e.target.value;
-    props.updateNewAnswerText(text);
-  };
-
   return (
-    <div className={stl.messageInput}>
-      <input
-        onChange={OnMessageChange}
+    <form className={stl.messageInput} onSubmit={props.handleSubmit}>
+      <Field
         placeholder="Write a message"
-        value={props.newAnswerText}
-      ></input>
-      <div onClick={addAnswer} className={stl.submitMessageBtn}>
-        <img src={SubmitBtn} alt="" />
-      </div>
-    </div>
-  );
+        name="newMessage"
+        component="textarea"
+      />
+      <button className={stl.sendButton}>
+        <img src={SubmitBtn} alt="submit" />
+      </button>
+    </form>
+  ); 
 };
 
-export default MessageTextArea;
+const MessageReduxForm = reduxForm({ form: "Messages" })(MessageTextArea);
+
+export default MessageReduxForm;
