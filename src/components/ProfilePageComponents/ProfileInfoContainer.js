@@ -13,7 +13,7 @@ import { compose } from "redux";
 class ProfileInfoContainer extends React.Component {
   componentDidMount() {
     if (!this.state.userId) {
-      return <Preloader />;
+      this.state.userId = this.props.userId;
     }
     this.props.setProfile(this.state.userId);
     this.props.getUserStatus(this.state.userId);
@@ -35,8 +35,8 @@ class ProfileInfoContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
-    openedProfileId: state.profilePage.openedProfileId,
     status: state.profilePage.status,
+    userId: state.Auth.userId,
   };
 };
 

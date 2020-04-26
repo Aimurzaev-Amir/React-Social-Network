@@ -15,7 +15,7 @@ let Navbar = (props) => {
   return ( 
     <div className={stl.navbar}>
       <MyPage userId={props.userId} />
-      <Newsfeeds />
+      <Newsfeeds /> 
       <NavbarMessages /> 
       <Friend /> 
       <Group />

@@ -62,7 +62,7 @@ export const setCaptcha = (captcha) => {
 //Thunks
 export const Auth = () => {
   return (dispatch) => {
-    AuthAPI.getAuth().then((data) => {
+    return AuthAPI.getAuth().then((data) => {
       if (data.resultCode === 0) {
         dispatch(
           setUserAuth(data.data.id, data.data.login, data.data.email, true)
