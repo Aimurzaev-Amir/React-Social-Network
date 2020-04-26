@@ -7,8 +7,7 @@ import { NavLink } from "react-router-dom";
 let HeaderUser = (props) => {
   return (
     <div className={stl.headerUser}>
-      {props.isAuth 
-      ? (
+      {props.isAuth ? (
         <div className={stl.headerUser}>
           <h4>{props.login}</h4>
           <div className={stl.UserPhoto}>
@@ -17,14 +16,14 @@ let HeaderUser = (props) => {
               alt="User be able"
             />
           </div>
-          <img className={stl.arrow} src={Arrow} alt="arrow down be able" />
+          <img onClick= {props.deleteAuth} className={stl.arrow} src={Arrow} alt="arrow down be able" />
         </div>
       ) : (
         <div className={stl.headerUser}>
           <NavLink to="/login">
             <h4>Login</h4>
           </NavLink>
-        </div> 
+        </div>
       )}
     </div>
   );

@@ -16,8 +16,8 @@ let Header = (props) => {
         <HeaderNotifications /> 
         <HeaderMusic />
         </div>
-        <div> 
-          <HeaderUser isAuth={props.isAuth} login={props.login} profile={props.profile}/>
+        <div>  
+          <HeaderUser deleteAuth={props.deleteAuth} isAuth={props.isAuth} login={props.login} profile={props.profile}/>
       </div>
       </div>
         

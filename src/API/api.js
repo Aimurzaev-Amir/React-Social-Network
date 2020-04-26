@@ -17,7 +17,7 @@ export const ProfileAPI = {
     })
   },
   puStatus(status) {
-    return instance.put("profile/status", {status: status}).then((response) => {
+    return instance.put("profile/status", {status}).then((response) => {
       return response.data
     })
   }
@@ -51,5 +51,20 @@ export const AuthAPI = {
       return response.data;
     });
   },
+  postAuth(email, password, rememberMe, captcha) {
+    return instance.post("auth/login", {email, password, rememberMe, captcha}).then((response) => {
+      return response.data;
+    })
+  },
+  deleteAuth() {
+    return instance.delete("auth/login").then((response) => {
+      return response.data;
+    })
+  },
+  getCaptcha() {
+    return instance.get("security/get-captcha-url").then((response) => {
+      return response.data;
+    })
+  }
 };
  

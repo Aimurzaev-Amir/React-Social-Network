@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import Header from "../Header";
-import { Auth } from "../../Redux/AuthReducer";
+import { Auth, deleteAuth } from "../../Redux/AuthReducer";
 
 class HeaderContainer extends React.Component {
   componentDidMount() {
     this.props.Auth();
   }
   render() {
-    return <Header isAuth={this.props.isAuth} login={this.props.login} />;
+    return <Header deleteAuth={this.props.deleteAuth} isAuth={this.props.isAuth} login={this.props.login} />;
   }
 }
 
@@ -19,4 +19,4 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { Auth })(HeaderContainer);
+export default connect(mapStateToProps, { Auth, deleteAuth })(HeaderContainer);
