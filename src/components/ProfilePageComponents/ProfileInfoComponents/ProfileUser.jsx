@@ -17,15 +17,8 @@ let ProfileUser = (props) => {
         </p>
         <div className={stl.userLocation}>
           <img src={GPS} alt="be able user location" />
-          <ProfileStatus
+          <ProfileStatus 
             status={props.status}
-            // // aboutMe={props.aboutMe}
-
-            // editMode={props.editMode}
-            // SaveStatus={props.SaveStatus}
-            // ChangeStatus={props.ChangeStatus}
-            // localStatus={props.localStatus}
-            // onStatusChange={props.onStatusChange}
             updateUserStatus={props.updateUserStatus}
           />
         </div>

@@ -10,14 +10,8 @@ let ProfileIntro = (props) => {
         <ProfileUser
           contacts={props.profile.contacts}
           photos={props.profile.photos.large}
-          // aboutMe = {props.profile.aboutMe}
           fullName={props.profile.fullName}
           status={props.status}
-          // editMode={props.editMode}
-          // SaveStatus={props.SaveStatus}
-          // ChangeStatus={props.ChangeStatus}
-          // localStatus={props.localStatus}
-          // onStatusChange={props.onStatusChange}
           updateUserStatus={props.updateUserStatus}
         />
         <ProfileIntroButtons />

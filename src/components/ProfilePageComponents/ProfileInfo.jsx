@@ -12,12 +12,7 @@ let ProfileInfo = (props) => {
       <ProfileBanner />
       <ProfileIntro
         profile={props.profile}
-        // SaveStatus={props.SaveStatus}
-        // ChangeStatus={props.ChangeStatus}
-        // editMode={props.editMode}
         status={props.status}
-        // localStatus={props.localStatus}
-        // onStatusChange={props.onStatusChange}
         updateUserStatus={props.updateUserStatus}
       />
     </div>

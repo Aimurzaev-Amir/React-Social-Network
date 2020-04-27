@@ -3,7 +3,7 @@ import { AuthAPI } from "../API/api";
 const setUserAuthType = "SET_USER_AUTH";
 const inputErrorType = "INPUT-ERROR";
 const captchaType = "CAPTCHA";
-
+ 
 let initialState = {
   userId: null,
   login: null,
@@ -12,7 +12,7 @@ let initialState = {
   error: "",
   captcha: "",
 };
-
+ 
 const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case setUserAuthType:
@@ -71,6 +71,7 @@ export const Auth = () => {
     });
   };
 };
+
 export const setAuth = (email, password, rememberMe, captcha) => {
   return (dispatch) => {
     AuthAPI.postAuth(email, password, rememberMe, captcha).then(

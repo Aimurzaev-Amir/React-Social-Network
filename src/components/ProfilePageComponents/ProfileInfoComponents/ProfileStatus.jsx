@@ -1,54 +1,42 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
+const ProfileStatus = (props) => {
+  let [editMode, setEditMode] = useState(false);
+  let [status, setStatus] = useState(props.status);
 
-class ProfileStatus extends React.Component {
-  state = {
-    editMode: false,
-    localStatus: this.props.status,
-  };
-  ChangeStatus = () => {
-    this.setState({
-      editMode: true,
-    });
-  };
-  SaveStatus = () => {
-    this.setState({
-      editMode: false,
-    });
-    this.props.updateUserStatus(this.state.localStatus)
-  };
-  onStatusChange = (e) => {
-    this.setState({
-      localStatus: e.target.value,
-    })
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if(prevProps.status !== this.props.status) {
-      this.setState({
-        localStatus: this.props.status,
-      })
-    }
-  }
+  useEffect(() => {
+    setStatus(props.status);
+  }, [props.status]);
 
-  render() {
-    return(
-      <div>
-      {this.state.editMode ? (
+  const ChangeStatus = () => {
+    setEditMode(true);
+  };
+  const onStatusChange = (e) => {
+    setStatus(e.currentTarget.value);
+  };
+  const SaveStatus = () => {
+    setEditMode(false);
+    props.updateUserStatus(status);
+  };
+  return (
+    <div>
+      {editMode ? (
         <input
-          onChange={this.onStatusChange}
+          onChange={onStatusChange}
           autoFocus={true}
-          onBlur={this.SaveStatus}
+          onBlur={SaveStatus}
           type="text"
-          value={this.state.localStatus}
+          value={status}
         />
       ) : (
-        <p onClick={this.ChangeStatus}>
-          {this.props.status ? this.props.status : "User status"}
+        <p onClick={ChangeStatus}>
+          {props.status ? props.status : "User status"}
         </p>
       )}
     </div>
-    )
-  }
+  );
 };
 
 export default ProfileStatus;

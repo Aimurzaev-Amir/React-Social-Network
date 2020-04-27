@@ -2,12 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import ProfileInfo from "./ProfileInfo";
 import { withRouter } from "react-router-dom";
-import Preloader from "../../common/preloader/Preloader";
 import {
   setProfile,
   getUserStatus,
   updateUserStatus,
-} from "../../Redux/profileReducer";
+} from "../../Redux/profileReducer"; 
 import { compose } from "redux";
 
 class ProfileInfoContainer extends React.Component {
