@@ -1,4 +1,4 @@
-const addAnswerType = "ADD-ANSWER";
+const addAnswerType = "MESSAGES_REDUCER/ADD-ANSWER";
 
 let initialState = {
   Dialogs: [

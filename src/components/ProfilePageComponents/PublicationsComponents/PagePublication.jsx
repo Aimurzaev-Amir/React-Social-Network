@@ -10,8 +10,8 @@ import PublisherCommentText from "./PublisherCommentText";
 import PublicationAnswer from "./PublicationAnswer";
 import UserCommentAnswer from "./UserCommentAnswer";
 
-let PagePublication = (props) => {
-  let PagePublicationsElements = props.posts.map((post) => {
+let PagePublication = React.memo((props) => {
+  let PagePublicationsElements = [...props.posts].reverse().map((post) => {
     return (
       <div className={stl.publications} key={post.id}>
         <PagePublicationStatus when={post.when} userName={post.userName} />
@@ -27,7 +27,7 @@ let PagePublication = (props) => {
               />
             </div>
             <PublishedTime Time={post.Time} />
-            <PublisherCommentText publicationText={post.publicationText} />
+            <PublisherCommentText publicationText={post.publicationText} /> 
             <PublicationAnswer
               CommentAnswer={post.CommentAnswer}
               answerUsersName={post.answerUsersName}
@@ -42,6 +42,6 @@ let PagePublication = (props) => {
   });
 
   return <div>{PagePublicationsElements}</div>;
-};
+});
 
 export default PagePublication;

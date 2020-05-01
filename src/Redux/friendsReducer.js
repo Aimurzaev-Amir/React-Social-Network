@@ -1,12 +1,12 @@
 import { UsersAPI, FollowAPI } from "../API/api";
 
-const setFriendsType = "SET-FRIENDS";
-const followType = "FOLLOW";
-const unfollowType = "UNFOLLOW";
-const setPagesType = "SETPAGES";
-const setCurrentPageType = "SET-CURRENT-PAGE";
-const setPreloaderType = "SET-PRELOADER";
-const followingToggleType = "FOLLOWING-TOGGLE-TYPE";
+const setFriendsType = "FRIENDS_REDUCER/SET-FRIENDS";
+const followType = "FRIENDS_REDUCER/FOLLOW";
+const unfollowType = "FRIENDS_REDUCER/UNFOLLOW";
+const setPagesType = "FRIENDS_REDUCER/SETPAGES";
+const setCurrentPageType = "FRIENDS_REDUCER/SET-CURRENT-PAGE";
+const setPreloaderType = "FRIENDS_REDUCER/SET-PRELOADER";
+const followingToggleType = "FRIENDS_REDUCER/FOLLOWING-TOGGLE-TYPE";
 
 let initialstate = {
   friends: [],
@@ -120,43 +120,37 @@ export const followingToggle = (isLoading, userId) => {
     userId,
   };
 };
- 
+
 //Thunks
 export const getUsers = (pageNumber = 1, currentPage, pageSize) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(setCurrentPage(pageNumber));
     dispatch(setPreloader(true));
-    UsersAPI.getState(currentPage, pageSize).then(
-      (data) => {
-        dispatch(setPreloader(false));
-        dispatch(setFriends(data.items));
-        dispatch(setPages(data.totalCount));
-      }
-    );
-  }
+    let data = await UsersAPI.getState(currentPage, pageSize);
+    dispatch(setPreloader(false));
+    dispatch(setFriends(data.items));
+    dispatch(setPages(data.totalCount));
+  };
 };
 export const setUnfollow = (id) => {
-  return (dispatch) => {
-    dispatch(followingToggle(true, id))
-        FollowAPI.deleteFollow(id).then((data) => {
-          if (data.resultCode === 0) {
-            dispatch(unfollow(id));
-          }
-          dispatch(followingToggle(false, id))
-        });
-  } 
-}
+  return async (dispatch) => {
+    dispatch(followingToggle(true, id));
+    let data = await FollowAPI.deleteFollow(id);
+    if (data.resultCode === 0) {
+      dispatch(unfollow(id));
+    }
+    dispatch(followingToggle(false, id));
+  };
+};
 export const setFollow = (id) => {
-  return (dispatch) => {
-    dispatch(followingToggle(true, id))
-        FollowAPI.postFollow(id).then((data) => {
-          if (data.resultCode === 0) {
-            dispatch(follow(id));
-          }
-          dispatch(followingToggle(false, id))
-        });
-  }
-}
-
+  return async (dispatch) => {
+    dispatch(followingToggle(true, id));
+    let data = await FollowAPI.postFollow(id);
+    if (data.resultCode === 0) {
+      dispatch(follow(id));
+    }
+    dispatch(followingToggle(false, id));
+  };
+};
 
 export default friendsReducer;

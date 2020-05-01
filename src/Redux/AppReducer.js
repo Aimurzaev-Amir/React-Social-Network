@@ -1,5 +1,5 @@
 import { Auth } from "./AuthReducer";
-const initializedSuccessType = "INITIALIZED-SUCCESS";
+const initializedSuccessType = "APP_REDUCER/INITIALIZED-SUCCESS";
 
 let initialState = {
   initialized: false,
