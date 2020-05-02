@@ -6,20 +6,28 @@ import {
   setProfile,
   getUserStatus,
   updateUserStatus,
-} from "../../Redux/profileReducer"; 
+} from "../../Redux/profileReducer";
 import { compose } from "redux";
 
 class ProfileInfoContainer extends React.Component {
   componentDidMount() {
-    if (!this.state.userId) {
-      this.state.userId = this.props.userId;
+    let userId = this.props.match.params.userId;
+    if (!userId) {
+      userId = this.props.userId;
     }
-    this.props.setProfile(this.state.userId);
-    this.props.getUserStatus(this.state.userId);
+    this.props.setProfile(userId);
+    this.props.getUserStatus(userId);
   }
-  state = {
-    userId: this.props.match.params.userId,
-  };
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.match.params.userId != prevProps.match.params.userId) {
+      let userId = this.props.match.params.userId;
+      if (!userId) {
+        userId = this.props.userId;
+      }
+      this.props.setProfile(userId);
+      this.props.getUserStatus(userId);
+    }
+  }
   render() {
     return (
       <ProfileInfo

@@ -1,4 +1,8 @@
-.selectedPage{
-    font-weight: bold;
-    color: red;
-  }
+.selectedPage {
+  font-weight: bold;
+  color: red;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
