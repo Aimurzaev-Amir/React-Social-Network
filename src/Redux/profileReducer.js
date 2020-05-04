@@ -3,6 +3,9 @@ import { ProfileAPI } from "../API/api";
 const addPostType = "PROFILE_REDUCER/ADD-POST";
 const setUserProfileType = "PROFILE_REDUCER/SET-USER-PROFILE";
 const setUserStatusType = "PROFILE_REDUCER/SET-USER-STATUS";
+const setUpdatedPhotoType = "PROFILE_REDUCER/SET-UPDATED-PHOTO";
+const setProfileUpdatingSuccessType =
+  "PROFILE_REDUCER/SET-PROFILE-UPDATING-SUCCESS";
 
 let initialState = {
   profile: null,
@@ -45,6 +48,7 @@ let initialState = {
       UserAnswerIcon: require("../components/ProfilePageComponents/PublicationsComponents/PublicationsImg/user-photo.png"),
     },
   ],
+  savedMessage: "",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -80,6 +84,16 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         status: action.status,
       };
+    case setUpdatedPhotoType:
+      return {
+        ...state,
+        profile: { ...state.profile, photos: action.photos },
+      };
+    case setProfileUpdatingSuccessType:
+      return {
+        ...state,
+        savedMessage: action.successMessage,
+      };
     default:
       return state;
   }
@@ -103,7 +117,18 @@ export let setUserStatus = (status) => {
     status,
   };
 };
-
+export let setUpdatedPhoto = (photos) => {
+  return {
+    type: setUpdatedPhotoType,
+    photos,
+  };
+};
+export const setProfileUpdatingSuccess = (successMessage) => {
+  return {
+    type: setProfileUpdatingSuccessType,
+    successMessage,
+  };
+};
 //Thunks
 export const setProfile = (userId) => {
   return async (dispatch) => {
@@ -122,6 +147,25 @@ export const updateUserStatus = (status) => {
     let data = await ProfileAPI.puStatus(status);
     if (data.resultCode === 0) {
       dispatch(setUserStatus(status));
+    }
+  };
+};
+export const changePhoto = (photoFile) => {
+  return async (dispatch) => {
+    let data = await ProfileAPI.putPhoto(photoFile);
+    if (data.resultCode === 0) {
+      dispatch(setUpdatedPhoto(data.data.photos));
+    }
+  };
+};
+export const commitProfileChanges = (profileData) => {
+  return async (dispatch) => {
+    let data = await ProfileAPI.putProfile(profileData);
+    if (data.resultCode === 0) {
+      dispatch(setProfileUpdatingSuccess("Changes saves successfully"));
+    }
+    if (data.resultCode === 1) {
+      dispatch(setProfileUpdatingSuccess("Something wrong, please check required fields"));
     }
   };
 };

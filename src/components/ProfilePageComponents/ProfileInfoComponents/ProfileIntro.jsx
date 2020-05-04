@@ -7,12 +7,15 @@ let ProfileIntro = (props) => {
   return (
     <div className={stl.profileIntroBg}>
       <div className={`${stl.profileIntro} ${stl.wrapper}`}>
-        <ProfileUser
+        <ProfileUser 
           contacts={props.profile.contacts}
           photos={props.profile.photos.large}
           fullName={props.profile.fullName}
           status={props.status}
           updateUserStatus={props.updateUserStatus}
+          userId={props.userId}
+          //thunks
+          changePhoto={props.changePhoto}
         />
         <ProfileIntroButtons />
       </div>

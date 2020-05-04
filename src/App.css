@@ -63,7 +63,7 @@
 }
 .preloader{
   position: absolute;
-  right: 30%;
+  left: 35%;
   top: 25%;
   z-index: 999;
   

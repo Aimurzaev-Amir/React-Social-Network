@@ -9,6 +9,7 @@ const ProfileStatus = React.memo((props) => {
   useEffect(() => {
     setStatus(props.status);
   }, [props.status]);
+  
   const ChangeStatus = () => {
     setEditMode(true);
   };
@@ -21,7 +22,7 @@ const ProfileStatus = React.memo((props) => {
   };
   return (
     <div>
-      {editMode ? (
+      {editMode && !props.userId ? (
         <input
           onChange={onStatusChange}
           autoFocus={true}

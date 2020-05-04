@@ -25,6 +25,9 @@ const ProfileInfoContainer = React.lazy(() =>
   import("./components/ProfilePageComponents/ProfileInfoContainer")
 );
 const Login = React.lazy(() => import("./components/LoginComponents/Login"));
+const EditProfile = React.lazy(() =>
+  import("./components/ProfilePageComponents/EditProfile/EditProfile")
+);
 
 class App extends React.Component {
   componentDidMount() {
@@ -51,6 +54,7 @@ class App extends React.Component {
             <Route path="/messages" render={SuspenseHOC(MessagesContainer)} />
             <Route path="/friends" render={SuspenseHOC(FriendsContainer)} />
             <Route path="/login" render={SuspenseHOC(Login)} />
+            <Route path="/edit" render={SuspenseHOC(EditProfile)} />
           </div>
         </div>
       </div>

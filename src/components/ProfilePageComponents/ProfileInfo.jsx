@@ -10,10 +10,13 @@ let ProfileInfo = (props) => {
   return (
     <div className="ProfileInfo">
       <ProfileBanner />
-      <ProfileIntro
+      <ProfileIntro 
         profile={props.profile}
         status={props.status}
+        userId={props.userId}
         updateUserStatus={props.updateUserStatus}
+        //thunks
+        changePhoto={props.changePhoto}
       />
     </div>
   );
